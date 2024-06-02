@@ -1,0 +1,683 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title></title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library Pre_MK_Logic</h1>
+
+<div class="code">
+
+<br/>
+</div>
+
+<div class="doc">
+Pre_MK_Logic 
+</div>
+<div class="code">
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> <a id="e15f3fa8414cf45e36c73a91b3f5f2c2" class="idref" href="#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">&quot;</span></a>∀ x .. y , P" := (<span class="id" title="keyword">forall</span> <a id="x:1" class="idref" href="#x:1"><span class="id" title="binder">x</span></a>, .. (<span class="id" title="keyword">forall</span> <a id="y:2" class="idref" href="#y:2"><span class="id" title="binder">y</span></a>, <span class="id" title="var">P</span>) ..)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 200, <span class="id" title="var">x</span> <span class="id" title="var">binder</span>, <span class="id" title="var">y</span> <span class="id" title="var">binder</span>, <span class="id" title="tactic">right</span> <span class="id" title="keyword">associativity</span>,<br/>
+&nbsp;&nbsp;<span class="id" title="var">format</span> "'[' ∀ x .. y ']' , P") : <span class="id" title="var">type_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> <a id="94e052c6337a815c52cda44eea9df276" class="idref" href="#94e052c6337a815c52cda44eea9df276"><span class="id" title="notation">&quot;</span></a>∃ x .. y , P" := (<a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">exists</span></a> <a id="x:3" class="idref" href="#x:3"><span class="id" title="binder">x</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">,</span></a> .. (<a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">exists</span></a> <a id="y:4" class="idref" href="#y:4"><span class="id" title="binder">y</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#a883bdd010993579f99d60b3775bcf54"><span class="id" title="notation">,</span></a> <span class="id" title="var">P</span>) ..)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 200, <span class="id" title="var">x</span> <span class="id" title="var">binder</span>, <span class="id" title="var">y</span> <span class="id" title="var">binder</span>, <span class="id" title="tactic">right</span> <span class="id" title="keyword">associativity</span>,<br/>
+&nbsp;&nbsp;<span class="id" title="var">format</span> "'[' ∃ x .. y ']' , P") : <span class="id" title="var">type_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> <a id="bc1ad27deabe143d39d35abe6be2c1a4" class="idref" href="#bc1ad27deabe143d39d35abe6be2c1a4"><span class="id" title="notation">&quot;</span></a>'λ' x .. y , t" := (<span class="id" title="keyword">fun</span> <a id="x:5" class="idref" href="#x:5"><span class="id" title="binder">x</span></a> =&gt; .. (<span class="id" title="keyword">fun</span> <a id="y:6" class="idref" href="#y:6"><span class="id" title="binder">y</span></a> =&gt; <span class="id" title="var">t</span>) ..)<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 200, <span class="id" title="var">x</span> <span class="id" title="var">binder</span>, <span class="id" title="var">y</span> <span class="id" title="var">binder</span>, <span class="id" title="tactic">right</span> <span class="id" title="keyword">associativity</span>,<br/>
+&nbsp;&nbsp;<span class="id" title="var">format</span> "'[' 'λ' x .. y ']' , t").<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Module</span> <a id="Logic" class="idref" href="#Logic"><span class="id" title="module">Logic</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Axiom</span> <a id="Logic.classic" class="idref" href="#Logic.classic"><span class="id" title="axiom">classic</span></a> : <a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">∀</span></a> <a id="P:7" class="idref" href="#P:7"><span class="id" title="binder">P</span></a><a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">,</span></a> <a class="idref" href="Pre_MK_Logic.html#P:7"><span class="id" title="variable">P</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#f031fe1957c4a4a8e217aa46af2b4e25"><span class="id" title="notation">\/</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a><a class="idref" href="Pre_MK_Logic.html#P:7"><span class="id" title="variable">P</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Proposition</span> <a id="Logic.peirce" class="idref" href="#Logic.peirce"><span class="id" title="lemma">peirce</span></a> : <a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">∀</span></a> <a id="P:9" class="idref" href="#P:9"><span class="id" title="binder">P</span></a><a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">,</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a><a class="idref" href="Pre_MK_Logic.html#P:9"><span class="id" title="variable">P</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="Pre_MK_Logic.html#P:9"><span class="id" title="variable">P</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="Pre_MK_Logic.html#P:9"><span class="id" title="variable">P</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Proposition</span> <a id="Logic.NNPP" class="idref" href="#Logic.NNPP"><span class="id" title="lemma">NNPP</span></a> : <a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">∀</span></a> <a id="P:10" class="idref" href="#P:10"><span class="id" title="binder">P</span></a><a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">,</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~~</span></a><a class="idref" href="Pre_MK_Logic.html#P:10"><span class="id" title="variable">P</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"><span class="id" title="notation">&lt;-&gt;</span></a> <a class="idref" href="Pre_MK_Logic.html#P:10"><span class="id" title="variable">P</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Proposition</span> <a id="Logic.notandor" class="idref" href="#Logic.notandor"><span class="id" title="lemma">notandor</span></a> : <a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">∀</span></a> <a id="P:11" class="idref" href="#P:11"><span class="id" title="binder">P</span></a> <a id="Q:12" class="idref" href="#Q:12"><span class="id" title="binder">Q</span></a><a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">,</span></a><br/>
+&nbsp;&nbsp;<a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~(</span></a><a class="idref" href="Pre_MK_Logic.html#P:11"><span class="id" title="variable">P</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">/\</span></a> <a class="idref" href="Pre_MK_Logic.html#Q:12"><span class="id" title="variable">Q</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"><span class="id" title="notation">&lt;-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#f031fe1957c4a4a8e217aa46af2b4e25"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a><a class="idref" href="Pre_MK_Logic.html#P:11"><span class="id" title="variable">P</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#f031fe1957c4a4a8e217aa46af2b4e25"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#f031fe1957c4a4a8e217aa46af2b4e25"><span class="id" title="notation">\/</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#f031fe1957c4a4a8e217aa46af2b4e25"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a><a class="idref" href="Pre_MK_Logic.html#Q:12"><span class="id" title="variable">Q</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#f031fe1957c4a4a8e217aa46af2b4e25"><span class="id" title="notation">)</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">/\</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~(</span></a><a class="idref" href="Pre_MK_Logic.html#P:11"><span class="id" title="variable">P</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#f031fe1957c4a4a8e217aa46af2b4e25"><span class="id" title="notation">\/</span></a> <a class="idref" href="Pre_MK_Logic.html#Q:12"><span class="id" title="variable">Q</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'&lt;-&gt;'_x"><span class="id" title="notation">&lt;-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a><a class="idref" href="Pre_MK_Logic.html#P:11"><span class="id" title="variable">P</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">/\</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a><a class="idref" href="Pre_MK_Logic.html#Q:12"><span class="id" title="variable">Q</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">))</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Proposition</span> <a id="Logic.inp" class="idref" href="#Logic.inp"><span class="id" title="lemma">inp</span></a> : <a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">∀</span></a> <a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">{</span></a><a id="P:13" class="idref" href="#P:13"><span class="id" title="binder">P</span></a> <a id="Q:14" class="idref" href="#Q:14"><span class="id" title="binder">Q</span></a> : <span class="id" title="keyword">Prop</span><a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">},</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">(</span></a><a class="idref" href="Pre_MK_Logic.html#P:13"><span class="id" title="variable">P</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="Pre_MK_Logic.html#Q:14"><span class="id" title="variable">Q</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a><a class="idref" href="Pre_MK_Logic.html#Q:14"><span class="id" title="variable">Q</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">(</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a><a class="idref" href="Pre_MK_Logic.html#P:13"><span class="id" title="variable">P</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">)</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Proposition</span> <a id="Logic.imply_to_and" class="idref" href="#Logic.imply_to_and"><span class="id" title="lemma">imply_to_and</span></a> : <a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">∀</span></a> <a id="P:15" class="idref" href="#P:15"><span class="id" title="binder">P</span></a> <a id="Q:16" class="idref" href="#Q:16"><span class="id" title="binder">Q</span></a> : <span class="id" title="keyword">Prop</span><a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">,</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">(</span></a><a class="idref" href="Pre_MK_Logic.html#P:15"><span class="id" title="variable">P</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="Pre_MK_Logic.html#Q:16"><span class="id" title="variable">Q</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="Pre_MK_Logic.html#P:15"><span class="id" title="variable">P</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">/\</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a> <a class="idref" href="Pre_MK_Logic.html#Q:16"><span class="id" title="variable">Q</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Proposition</span> <a id="Logic.not_all_not_ex" class="idref" href="#Logic.not_all_not_ex"><span class="id" title="lemma">not_all_not_ex</span></a> :<br/>
+&nbsp;&nbsp;<a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">∀</span></a> <a id="U:17" class="idref" href="#U:17"><span class="id" title="binder">U</span></a> <a id="P:18" class="idref" href="#P:18"><span class="id" title="binder">P</span></a><a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">,</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">(</span></a><a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">∀</span></a> <a id="n:19" class="idref" href="#n:19"><span class="id" title="binder">n</span></a> : <a class="idref" href="Pre_MK_Logic.html#U:17"><span class="id" title="variable">U</span></a><a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">,</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a> <a class="idref" href="Pre_MK_Logic.html#P:18"><span class="id" title="variable">P</span></a> <a class="idref" href="Pre_MK_Logic.html#n:19"><span class="id" title="variable">n</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="Pre_MK_Logic.html#94e052c6337a815c52cda44eea9df276"><span class="id" title="notation">∃</span></a> <a id="n:20" class="idref" href="#n:20"><span class="id" title="binder">n</span></a> : <a class="idref" href="Pre_MK_Logic.html#U:17"><span class="id" title="variable">U</span></a><a class="idref" href="Pre_MK_Logic.html#94e052c6337a815c52cda44eea9df276"><span class="id" title="notation">,</span></a> <a class="idref" href="Pre_MK_Logic.html#P:18"><span class="id" title="variable">P</span></a> <a class="idref" href="Pre_MK_Logic.html#n:20"><span class="id" title="variable">n</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Proposition</span> <a id="Logic.not_ex_all_not" class="idref" href="#Logic.not_ex_all_not"><span class="id" title="lemma">not_ex_all_not</span></a> :<br/>
+&nbsp;<a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">∀</span></a> <a id="U:21" class="idref" href="#U:21"><span class="id" title="binder">U</span></a> <a id="P:22" class="idref" href="#P:22"><span class="id" title="binder">P</span></a><a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">,</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">(</span></a><a class="idref" href="Pre_MK_Logic.html#94e052c6337a815c52cda44eea9df276"><span class="id" title="notation">∃</span></a> <a id="n:23" class="idref" href="#n:23"><span class="id" title="binder">n</span></a> : <a class="idref" href="Pre_MK_Logic.html#U:21"><span class="id" title="variable">U</span></a><a class="idref" href="Pre_MK_Logic.html#94e052c6337a815c52cda44eea9df276"><span class="id" title="notation">,</span></a> <a class="idref" href="Pre_MK_Logic.html#P:22"><span class="id" title="variable">P</span></a> <a class="idref" href="Pre_MK_Logic.html#n:23"><span class="id" title="variable">n</span></a><a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">)</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#::type_scope:x_'-&gt;'_x"><span class="id" title="notation">-&gt;</span></a> <a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">∀</span></a> <a id="n:24" class="idref" href="#n:24"><span class="id" title="binder">n</span></a> : <a class="idref" href="Pre_MK_Logic.html#U:21"><span class="id" title="variable">U</span></a><a class="idref" href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2"><span class="id" title="notation">,</span></a> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#63a68285c81db8f9bc456233bb9ed181"><span class="id" title="notation">~</span></a> <a class="idref" href="Pre_MK_Logic.html#P:22"><span class="id" title="variable">P</span></a> <a class="idref" href="Pre_MK_Logic.html#n:24"><span class="id" title="variable">n</span></a>.<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">New</span> <span class="id" title="var">H</span> := <span class="id" title="tactic">pose</span> <span class="id" title="var">proof</span> <span class="id" title="var">H</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">TF</span> <span class="id" title="var">P</span> := <span class="id" title="tactic">destruct</span> (<a class="idref" href="Pre_MK_Logic.html#Logic.classic"><span class="id" title="axiom">classic</span></a> <span class="id" title="var">P</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">Absurd</span> := <span class="id" title="tactic">apply</span> <a class="idref" href="Pre_MK_Logic.html#Logic.peirce"><span class="id" title="lemma">peirce</span></a>; <span class="id" title="tactic">intros</span>.<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">deand</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;&nbsp;| <span class="id" title="var">H</span>: ?<span class="id" title="var">a</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">/\</span></a> ?<span class="id" title="var">b</span> |- <span class="id" title="var">_</span> =&gt; <span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span>; <span class="id" title="var">deand</span><br/>
+&nbsp;&nbsp;&nbsp;| <span class="id" title="var">_</span> =&gt; <span class="id" title="tactic">idtac</span><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">deor</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;&nbsp;| <span class="id" title="var">H</span>: ?<span class="id" title="var">a</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#f031fe1957c4a4a8e217aa46af2b4e25"><span class="id" title="notation">\/</span></a> ?<span class="id" title="var">b</span> |- <span class="id" title="var">_</span> =&gt; <span class="id" title="tactic">destruct</span> <span class="id" title="var">H</span>; <span class="id" title="var">deor</span><br/>
+&nbsp;&nbsp;&nbsp;| <span class="id" title="var">_</span> =&gt; <span class="id" title="tactic">idtac</span> <br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Ltac</span> <span class="id" title="var">deandG</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">match</span> <span class="id" title="keyword">goal</span> <span class="id" title="keyword">with</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;|- ?<span class="id" title="var">a</span> <a class="idref" href="http://coq.inria.fr/distrib/V8.16.1/stdlib//Coq.Init.Logic.html#ba2b0e492d2b4675a0acf3ea92aabadd"><span class="id" title="notation">/\</span></a> ?<span class="id" title="var">b</span> =&gt; <span class="id" title="tactic">split</span>; <span class="id" title="var">deandG</span><br/>
+&nbsp;&nbsp;&nbsp;&nbsp;| <span class="id" title="var">_</span> =&gt; <span class="id" title="tactic">idtac</span><br/>
+&nbsp;&nbsp;<span class="id" title="keyword">end</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">End</span> <a class="idref" href="Pre_MK_Logic.html#Logic"><span class="id" title="module">Logic</span></a>.<br/>
+
+<br/>
+<span class="id" title="keyword">Export</span> <a class="idref" href="Pre_MK_Logic.html#Logic"><span class="id" title="module">Logic</span></a>.<br/>
+</div>
+<table>
+<tr>
+<td>Global Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td><a href="index.html#global_L">L</a></td>
+<td>M</td>
+<td><a href="index.html#global_N">N</a></td>
+<td>O</td>
+<td><a href="index.html#global_P">P</a></td>
+<td><a href="index.html#global_Q">Q</a></td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td><a href="index.html#global_U">U</a></td>
+<td>V</td>
+<td>W</td>
+<td><a href="index.html#global_X">X</a></td>
+<td><a href="index.html#global_Y">Y</a></td>
+<td>Z</td>
+<td>_</td>
+<td><a href="index.html#global_*">other</a></td>
+<td>(36 entries)</td>
+</tr>
+<tr>
+<td>Notation Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td><a href="index.html#notation_*">other</a></td>
+<td>(3 entries)</td>
+</tr>
+<tr>
+<td>Binder Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td>M</td>
+<td><a href="index.html#binder_N">N</a></td>
+<td>O</td>
+<td><a href="index.html#binder_P">P</a></td>
+<td><a href="index.html#binder_Q">Q</a></td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td><a href="index.html#binder_U">U</a></td>
+<td>V</td>
+<td>W</td>
+<td><a href="index.html#binder_X">X</a></td>
+<td><a href="index.html#binder_Y">Y</a></td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(23 entries)</td>
+</tr>
+<tr>
+<td>Module Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td><a href="index.html#module_L">L</a></td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(1 entry)</td>
+</tr>
+<tr>
+<td>Library Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td><a href="index.html#library_P">P</a></td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(1 entry)</td>
+</tr>
+<tr>
+<td>Lemma Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td><a href="index.html#lemma_L">L</a></td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(7 entries)</td>
+</tr>
+<tr>
+<td>Axiom Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td><a href="index.html#axiom_L">L</a></td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(1 entry)</td>
+</tr>
+</table>
+<hr/>
+<h1>Global Index</h1>
+<a id="global_L"></a><h2>L </h2>
+<a href="Pre_MK_Logic.html#Logic">Logic</a> [module, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.classic">Logic.classic</a> [axiom, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.imply_to_and">Logic.imply_to_and</a> [lemma, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.inp">Logic.inp</a> [lemma, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.NNPP">Logic.NNPP</a> [lemma, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.notandor">Logic.notandor</a> [lemma, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.not_ex_all_not">Logic.not_ex_all_not</a> [lemma, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.not_all_not_ex">Logic.not_all_not_ex</a> [lemma, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.peirce">Logic.peirce</a> [lemma, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><a id="global_N"></a><h2>N </h2>
+<a href="Pre_MK_Logic.html#n:19">n:19</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#n:20">n:20</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#n:23">n:23</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#n:24">n:24</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><a id="global_P"></a><h2>P </h2>
+<a href="Pre_MK_Logic.html">Pre_MK_Logic</a> [library]<br/>
+<a href="Pre_MK_Logic.html#P:10">P:10</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:11">P:11</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:13">P:13</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:15">P:15</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:18">P:18</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:22">P:22</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:7">P:7</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:9">P:9</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><a id="global_Q"></a><h2>Q </h2>
+<a href="Pre_MK_Logic.html#Q:12">Q:12</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Q:14">Q:14</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Q:16">Q:16</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><a id="global_U"></a><h2>U </h2>
+<a href="Pre_MK_Logic.html#U:17">U:17</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#U:21">U:21</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><a id="global_X"></a><h2>X </h2>
+<a href="Pre_MK_Logic.html#x:1">x:1</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#x:3">x:3</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#x:5">x:5</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><a id="global_Y"></a><h2>Y </h2>
+<a href="Pre_MK_Logic.html#y:2">y:2</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#y:4">y:4</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#y:6">y:6</a> [binder, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><a id="global_*"></a><h2>other </h2>
+<a href="Pre_MK_Logic.html#94e052c6337a815c52cda44eea9df276">∃ _ .. _ , _ (type_scope)</a> [notation, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2">∀ _ .. _ , _ (type_scope)</a> [notation, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#bc1ad27deabe143d39d35abe6be2c1a4">λ _ .. _ , _</a> [notation, in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><hr/>
+<h1>Notation Index</h1>
+<a id="notation_*"></a><h2>other </h2>
+<a href="Pre_MK_Logic.html#94e052c6337a815c52cda44eea9df276">∃ _ .. _ , _ (type_scope)</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#e15f3fa8414cf45e36c73a91b3f5f2c2">∀ _ .. _ , _ (type_scope)</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#bc1ad27deabe143d39d35abe6be2c1a4">λ _ .. _ , _</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><hr/>
+<h1>Binder Index</h1>
+<a id="binder_N"></a><h2>N </h2>
+<a href="Pre_MK_Logic.html#n:19">n:19</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#n:20">n:20</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#n:23">n:23</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#n:24">n:24</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><a id="binder_P"></a><h2>P </h2>
+<a href="Pre_MK_Logic.html#P:10">P:10</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:11">P:11</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:13">P:13</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:15">P:15</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:18">P:18</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:22">P:22</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:7">P:7</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#P:9">P:9</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><a id="binder_Q"></a><h2>Q </h2>
+<a href="Pre_MK_Logic.html#Q:12">Q:12</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Q:14">Q:14</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Q:16">Q:16</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><a id="binder_U"></a><h2>U </h2>
+<a href="Pre_MK_Logic.html#U:17">U:17</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#U:21">U:21</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><a id="binder_X"></a><h2>X </h2>
+<a href="Pre_MK_Logic.html#x:1">x:1</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#x:3">x:3</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#x:5">x:5</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><a id="binder_Y"></a><h2>Y </h2>
+<a href="Pre_MK_Logic.html#y:2">y:2</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#y:4">y:4</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#y:6">y:6</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><hr/>
+<h1>Module Index</h1>
+<a id="module_L"></a><h2>L </h2>
+<a href="Pre_MK_Logic.html#Logic">Logic</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><hr/>
+<h1>Library Index</h1>
+<a id="library_P"></a><h2>P </h2>
+<a href="Pre_MK_Logic.html">Pre_MK_Logic</a> <br/>
+<br/><br/><hr/>
+<h1>Lemma Index</h1>
+<a id="lemma_L"></a><h2>L </h2>
+<a href="Pre_MK_Logic.html#Logic.imply_to_and">Logic.imply_to_and</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.inp">Logic.inp</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.NNPP">Logic.NNPP</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.notandor">Logic.notandor</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.not_ex_all_not">Logic.not_ex_all_not</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.not_all_not_ex">Logic.not_all_not_ex</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<a href="Pre_MK_Logic.html#Logic.peirce">Logic.peirce</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><hr/>
+<h1>Axiom Index</h1>
+<a id="axiom_L"></a><h2>L </h2>
+<a href="Pre_MK_Logic.html#Logic.classic">Logic.classic</a> [in <a href="Pre_MK_Logic.html">Pre_MK_Logic</a>]<br/>
+<br/><br/><hr/><table>
+<tr>
+<td>Global Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td><a href="index.html#global_L">L</a></td>
+<td>M</td>
+<td><a href="index.html#global_N">N</a></td>
+<td>O</td>
+<td><a href="index.html#global_P">P</a></td>
+<td><a href="index.html#global_Q">Q</a></td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td><a href="index.html#global_U">U</a></td>
+<td>V</td>
+<td>W</td>
+<td><a href="index.html#global_X">X</a></td>
+<td><a href="index.html#global_Y">Y</a></td>
+<td>Z</td>
+<td>_</td>
+<td><a href="index.html#global_*">other</a></td>
+<td>(36 entries)</td>
+</tr>
+<tr>
+<td>Notation Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td><a href="index.html#notation_*">other</a></td>
+<td>(3 entries)</td>
+</tr>
+<tr>
+<td>Binder Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td>M</td>
+<td><a href="index.html#binder_N">N</a></td>
+<td>O</td>
+<td><a href="index.html#binder_P">P</a></td>
+<td><a href="index.html#binder_Q">Q</a></td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td><a href="index.html#binder_U">U</a></td>
+<td>V</td>
+<td>W</td>
+<td><a href="index.html#binder_X">X</a></td>
+<td><a href="index.html#binder_Y">Y</a></td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(23 entries)</td>
+</tr>
+<tr>
+<td>Module Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td><a href="index.html#module_L">L</a></td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(1 entry)</td>
+</tr>
+<tr>
+<td>Library Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td><a href="index.html#library_P">P</a></td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(1 entry)</td>
+</tr>
+<tr>
+<td>Lemma Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td><a href="index.html#lemma_L">L</a></td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(7 entries)</td>
+</tr>
+<tr>
+<td>Axiom Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td><a href="index.html#axiom_L">L</a></td>
+<td>M</td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(1 entry)</td>
+</tr>
+</table>
+<hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

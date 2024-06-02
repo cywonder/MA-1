@@ -1,0 +1,647 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link href="coqdoc.css" rel="stylesheet" type="text/css" />
+<title></title>
+</head>
+
+<body>
+
+<div id="page">
+
+<div id="header">
+</div>
+
+<div id="main">
+
+<h1 class="libtitle">Library MA_CH</h1>
+
+<div class="code">
+</div>
+
+<div class="doc">
+MA_CH1 
+</div>
+<div class="code">
+
+<br/>
+<span class="id" title="keyword">Require</span> <span class="id" title="keyword">Export</span> <span class="id" title="var">Real_Axioms</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">R_stru</span> : <span class="id" title="var">Real_struct</span>.<br/>
+<span class="id" title="keyword">Parameter</span> <span class="id" title="var">R_axio</span> : <span class="id" title="var">Real_axioms</span> <span class="id" title="var">R_stru</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Global Hint Resolve</span> <span class="id" title="var">R_axio</span> : <span class="id" title="var">core</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Declare Scope</span> <span class="id" title="var">MA_R_scope</span>.<br/>
+<span class="id" title="keyword">Delimit</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">MA_R_scope</span> <span class="id" title="keyword">with</span> <span class="id" title="var">ma</span>.<br/>
+<span class="id" title="keyword">Open</span> <span class="id" title="keyword">Scope</span> <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">ℝ</span> := @<span class="id" title="var">R</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">ℕ</span> := @<span class="id" title="var">N</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">ℤ</span> := @<span class="id" title="var">Z</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">ℚ</span> := @<span class="id" title="var">Q</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">fp</span> := @<span class="id" title="var">fp</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">zeroR</span> := @<span class="id" title="var">zeroR</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">fm</span> := @<span class="id" title="var">fm</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">oneR</span> := @<span class="id" title="var">oneR</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Leq</span> := @<span class="id" title="var">Leq</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Abs</span> := @<span class="id" title="var">Abs</span> <span class="id" title="var">R_stru</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;x + y" := <span class="id" title="var">fp</span>[[<span class="id" title="var">x</span>, <span class="id" title="var">y</span>]] : <span class="id" title="var">MA_R_scope</span>.<br/>
+<span class="id" title="keyword">Notation</span> &quot;0" := <span class="id" title="var">zeroR</span> : <span class="id" title="var">MA_R_scope</span>.<br/>
+<span class="id" title="keyword">Notation</span> &quot;x · y" := <span class="id" title="var">fm</span>[[<span class="id" title="var">x</span>, <span class="id" title="var">y</span>]](<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 40) : <span class="id" title="var">MA_R_scope</span>.<br/>
+<span class="id" title="keyword">Notation</span> &quot;1" := <span class="id" title="var">oneR</span> : <span class="id" title="var">MA_R_scope</span>.<br/>
+<span class="id" title="keyword">Notation</span> &quot;x ≤ y" := ([<span class="id" title="var">x</span>, <span class="id" title="var">y</span>] ∈ <span class="id" title="var">Leq</span>)(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 77) : <span class="id" title="var">MA_R_scope</span>.<br/>
+<span class="id" title="keyword">Notation</span> &quot;- a" := (∩(\{ <span class="id" title="var">λ</span> <span class="id" title="var">u</span>, <span class="id" title="var">u</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">u</span> + <span class="id" title="var">a</span> = 0 \})) : <span class="id" title="var">MA_R_scope</span>.<br/>
+<span class="id" title="keyword">Notation</span> &quot;x - y" := (<span class="id" title="var">x</span> + (-<span class="id" title="var">y</span>)) : <span class="id" title="var">MA_R_scope</span>.<br/>
+<span class="id" title="keyword">Notation</span> &quot;a ⁻" := (∩(\{ <span class="id" title="var">λ</span> <span class="id" title="var">u</span>, <span class="id" title="var">u</span> ∈ (<span class="id" title="var">ℝ</span> ~ [0]) /\ <span class="id" title="var">u</span> · <span class="id" title="var">a</span> = 1 \}))<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5) : <span class="id" title="var">MA_R_scope</span>.<br/>
+<span class="id" title="keyword">Notation</span> &quot;m / n" := (<span class="id" title="var">m</span> · (<span class="id" title="var">n⁻</span>)) : <span class="id" title="var">MA_R_scope</span>.<br/>
+<span class="id" title="keyword">Notation</span> &quot;｜ x ｜" := (<span class="id" title="var">Abs</span>[<span class="id" title="var">x</span>])(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5, <span class="id" title="var">x</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">LT</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> := <span class="id" title="var">x</span> ≤ <span class="id" title="var">y</span> /\ <span class="id" title="var">x</span> &lt;&gt; <span class="id" title="var">y</span>.<br/>
+<span class="id" title="keyword">Notation</span> &quot;x &lt; y" := (<span class="id" title="var">LT</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>) : <span class="id" title="var">MA_R_scope</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Ensemble_R</span> := @<span class="id" title="var">Ensemble_R</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">PlusR</span> := @<span class="id" title="var">PlusR</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">zero_in_R</span> := @<span class="id" title="var">zero_in_R</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Plus_P1</span> := @<span class="id" title="var">Plus_P1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Plus_P2</span> := @<span class="id" title="var">Plus_P2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Plus_P3</span> := @<span class="id" title="var">Plus_P3</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Plus_P4</span> := @<span class="id" title="var">Plus_P4</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">MultR</span> := @<span class="id" title="var">MultR</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">one_in_R</span> := @<span class="id" title="var">one_in_R</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Mult_P1</span> := @<span class="id" title="var">Mult_P1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Mult_P2</span> := @<span class="id" title="var">Mult_P2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Mult_P3</span> := @<span class="id" title="var">Mult_P3</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Mult_P4</span> := @<span class="id" title="var">Mult_P4</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Mult_P5</span> := @<span class="id" title="var">Mult_P5</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">LeqR</span> := @<span class="id" title="var">LeqR</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Leq_P1</span> := @<span class="id" title="var">Leq_P1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Leq_P2</span> := @<span class="id" title="var">Leq_P2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Leq_P3</span> := @<span class="id" title="var">Leq_P3</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Leq_P4</span> := @<span class="id" title="var">Leq_P4</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Plus_Leq</span> := @<span class="id" title="var">Plus_Leq</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Mult_Leq</span> := @<span class="id" title="var">Mult_Leq</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Completeness</span> := @<span class="id" title="var">Completeness</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Plus_close</span> := @<span class="id" title="var">Plus_close</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Mult_close</span> := @<span class="id" title="var">Mult_close</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">one_in_R_Co</span> := @<span class="id" title="var">one_in_R_Co</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Plus_Co1</span> := @<span class="id" title="var">Plus_Co1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Plus_Co2</span> := @<span class="id" title="var">Plus_Co2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Plus_neg1a</span> := @<span class="id" title="var">Plus_neg1a</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Plus_neg1b</span> := @<span class="id" title="var">Plus_neg1b</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Plus_neg2</span> := @<span class="id" title="var">Plus_neg2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Minus_P1</span> := @<span class="id" title="var">Minus_P1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Minus_P2</span> := @<span class="id" title="var">Minus_P2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Plus_Co3</span> := @<span class="id" title="var">Plus_Co3</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Mult_Co1</span> := @<span class="id" title="var">Mult_Co1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Mult_Co2</span> := @<span class="id" title="var">Mult_Co2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Mult_inv1</span> := @<span class="id" title="var">Mult_inv1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Mult_inv2</span> := @<span class="id" title="var">Mult_inv2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Divide_P1</span> := @<span class="id" title="var">Divide_P1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Divide_P2</span> := @<span class="id" title="var">Divide_P2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Mult_Co3</span> := @<span class="id" title="var">Mult_Co3</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">PlusMult_Co1</span> := @<span class="id" title="var">PlusMult_Co1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">PlusMult_Co2</span> := @<span class="id" title="var">PlusMult_Co2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">PlusMult_Co3</span> := @<span class="id" title="var">PlusMult_Co3</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">PlusMult_Co4</span> := @<span class="id" title="var">PlusMult_Co4</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">PlusMult_Co5</span> := @<span class="id" title="var">PlusMult_Co5</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">PlusMult_Co6</span> := @<span class="id" title="var">PlusMult_Co6</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Order_Co1</span> := @<span class="id" title="var">Order_Co1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Order_Co2</span> := @<span class="id" title="var">Order_Co2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co1</span> := @<span class="id" title="var">OrderPM_Co1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co2a</span> := @<span class="id" title="var">OrderPM_Co2a</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co2b</span> := @<span class="id" title="var">OrderPM_Co2b</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co3</span> := @<span class="id" title="var">OrderPM_Co3</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co4</span> := @<span class="id" title="var">OrderPM_Co4</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co5</span> := @<span class="id" title="var">OrderPM_Co5</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co6</span> := @<span class="id" title="var">OrderPM_Co6</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co7a</span> := @<span class="id" title="var">OrderPM_Co7a</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co7b</span> := @<span class="id" title="var">OrderPM_Co7b</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co8a</span> := @<span class="id" title="var">OrderPM_Co8a</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co8b</span> := @<span class="id" title="var">OrderPM_Co8b</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co9</span> := @<span class="id" title="var">OrderPM_Co9</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co10</span> := @<span class="id" title="var">OrderPM_Co10</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OrderPM_Co11</span> := @<span class="id" title="var">OrderPM_Co11</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">IndSet</span> := @<span class="id" title="var">IndSet</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">IndSet_P1</span> := @<span class="id" title="var">IndSet_P1</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">N_Subset_R</span> := @<span class="id" title="var">N_Subset_R</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">one_in_N</span> := @<span class="id" title="var">one_in_N</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">zero_not_in_N</span> := @<span class="id" title="var">zero_not_in_N</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">IndSet_N</span> := @<span class="id" title="var">IndSet_N</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">MathInd</span> := @<span class="id" title="var">MathInd</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Nat_P1a</span> := @<span class="id" title="var">Nat_P1a</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Nat_P2</span> := @<span class="id" title="var">Nat_P2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Nat_P3</span> := @<span class="id" title="var">Nat_P3</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Nat_P4</span> := @<span class="id" title="var">Nat_P4</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Nat_P5</span> := @<span class="id" title="var">Nat_P5</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Nat_P6</span> := @<span class="id" title="var">Nat_P6</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">one_is_min_in_N</span> := @<span class="id" title="var">one_is_min_in_N</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">N_Subset_Z</span> := @<span class="id" title="var">N_Subset_Z</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Z_Subset_R</span> := @<span class="id" title="var">Z_Subset_R</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Int_P1_Lemma</span> := @<span class="id" title="var">Int_P1_Lemma</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Int_P1a</span> := @<span class="id" title="var">Int_P1a</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Int_P1b</span> := @<span class="id" title="var">Int_P1b</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Int_P2</span> := @<span class="id" title="var">Int_P2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Int_P3</span> := @<span class="id" title="var">Int_P3</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Int_P4</span> := @<span class="id" title="var">Int_P4</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Int_P5</span> := @<span class="id" title="var">Int_P5</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Z_Subset_Q</span> := @<span class="id" title="var">Z_Subset_Q</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Q_Subset_R</span> := @<span class="id" title="var">Q_Subset_R</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Frac_P1</span> := @<span class="id" title="var">Frac_P1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Frac_P2</span> := @<span class="id" title="var">Frac_P2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Rat_P1a</span> := @<span class="id" title="var">Rat_P1a</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Rat_P1b</span> := @<span class="id" title="var">Rat_P1b</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Rat_P2</span> := @<span class="id" title="var">Rat_P2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Rat_P3</span> := @<span class="id" title="var">Rat_P3</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Rat_P4</span> := @<span class="id" title="var">Rat_P4</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Rat_P5</span> := @<span class="id" title="var">Rat_P5</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Rat_P6</span> := @<span class="id" title="var">Rat_P6</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Rat_P7</span> := @<span class="id" title="var">Rat_P7</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Rat_P8</span> := @<span class="id" title="var">Rat_P8</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Rat_P9</span> := @<span class="id" title="var">Rat_P9</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Rat_P10</span> := @<span class="id" title="var">Rat_P10</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Even</span> := @<span class="id" title="var">Even</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Odd</span> := @<span class="id" title="var">Odd</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Even_and_Odd_P1</span> := @<span class="id" title="var">Even_and_Odd_P1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Even_and_Odd_P2_Lemma</span> := @<span class="id" title="var">Even_and_Odd_P2_Lemma</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Even_and_Odd_P2</span> := @<span class="id" title="var">Even_and_Odd_P2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Even_and_Odd_P3</span> := @<span class="id" title="var">Even_and_Odd_P3</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Existence_of_irRational_Number</span> :=<br/>
+&nbsp;&nbsp;@<span class="id" title="var">Existence_of_irRational_Number</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Arch_P1</span> := @<span class="id" title="var">Arch_P1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Arch_P2</span> := @<span class="id" title="var">Arch_P2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Arch_P3_Lemma</span> := @<span class="id" title="var">Arch_P3_Lemma</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Arch_P3a</span> := @<span class="id" title="var">Arch_P3a</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Arch_P3b</span> := @<span class="id" title="var">Arch_P3b</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Arch_P4</span> := @<span class="id" title="var">Arch_P4</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Arch_P5</span> := @<span class="id" title="var">Arch_P5</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Arch_P6</span> := @<span class="id" title="var">Arch_P6</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Arch_P7</span> := @<span class="id" title="var">Arch_P7</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Arch_P8</span> := @<span class="id" title="var">Arch_P8</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Arch_P9</span> := @<span class="id" title="var">Arch_P9</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Arch_P10</span> := @<span class="id" title="var">Arch_P10</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Abs_is_Function</span> := @<span class="id" title="var">Abs_is_Function</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Abs_in_R</span> := @<span class="id" title="var">Abs_in_R</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Distance</span> := @<span class="id" title="var">Distance</span> <span class="id" title="var">R_stru</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">me_zero_Abs</span> := @<span class="id" title="var">me_zero_Abs</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">le_zero_Abs</span> := @<span class="id" title="var">le_zero_Abs</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Abs_P1</span> := @<span class="id" title="var">Abs_P1</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Abs_P2</span> := @<span class="id" title="var">Abs_P2</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Abs_P3</span> := @<span class="id" title="var">Abs_P3</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Abs_P4</span> := @<span class="id" title="var">Abs_P4</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Abs_P5</span> := @<span class="id" title="var">Abs_P5</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Abs_P6</span> := @<span class="id" title="var">Abs_P6</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Abs_P7</span> := @<span class="id" title="var">Abs_P7</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Abs_P8</span> := @<span class="id" title="var">Abs_P8</span> <span class="id" title="var">R_stru</span> <span class="id" title="var">R_axio</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Global Hint Resolve</span> <span class="id" title="var">Plus_close</span> <span class="id" title="var">zero_in_R</span> <span class="id" title="var">Mult_close</span> <span class="id" title="var">one_in_R</span> <span class="id" title="var">one_in_R_Co</span><br/>
+&nbsp;&nbsp;<span class="id" title="var">Plus_neg1a</span> <span class="id" title="var">Plus_neg1b</span> <span class="id" title="var">Plus_neg2</span> <span class="id" title="var">Minus_P1</span> <span class="id" title="var">Minus_P2</span><br/>
+&nbsp;&nbsp;<span class="id" title="var">Mult_inv1</span> <span class="id" title="var">Mult_inv2</span> <span class="id" title="var">Divide_P1</span> <span class="id" title="var">Divide_P2</span> <span class="id" title="var">OrderPM_Co9</span><br/>
+&nbsp;&nbsp;<span class="id" title="var">N_Subset_R</span> <span class="id" title="var">one_in_N</span> <span class="id" title="var">Nat_P1a</span> <span class="id" title="var">Nat_P1b</span><br/>
+&nbsp;&nbsp;<span class="id" title="var">N_Subset_Z</span> <span class="id" title="var">Z_Subset_R</span> <span class="id" title="var">Int_P1a</span> <span class="id" title="var">Int_P1b</span><br/>
+&nbsp;&nbsp;<span class="id" title="var">Z_Subset_Q</span> <span class="id" title="var">Q_Subset_R</span> <span class="id" title="var">Rat_P1a</span> <span class="id" title="var">Rat_P1b</span> <span class="id" title="var">Abs_in_R</span>: <span class="id" title="var">real</span>.<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;］ a , b ［" := (\{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">a</span> &lt; <span class="id" title="var">x</span> /\ <span class="id" title="var">x</span> &lt; <span class="id" title="var">b</span> \})<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5, <span class="id" title="var">a</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">b</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;［ a , b ］" := (\{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">a</span> ≤ <span class="id" title="var">x</span> /\ <span class="id" title="var">x</span> ≤ <span class="id" title="var">b</span> \})<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5, <span class="id" title="var">a</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">b</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;］ a , b ］" := (\{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">a</span> &lt; <span class="id" title="var">x</span> /\ <span class="id" title="var">x</span> ≤ <span class="id" title="var">b</span> \})<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5, <span class="id" title="var">a</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">b</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;［ a , b ［" := (\{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">a</span> ≤ <span class="id" title="var">x</span> /\ <span class="id" title="var">x</span> &lt; <span class="id" title="var">b</span> \})<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5, <span class="id" title="var">a</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">b</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;］ a , +∞［" := (\{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">a</span> &lt; <span class="id" title="var">x</span> \})<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5, <span class="id" title="var">a</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;［ a , +∞［" := (\{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">a</span> ≤ <span class="id" title="var">x</span> \})<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5, <span class="id" title="var">a</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;］-∞ , b ］" := (\{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">x</span> ≤ <span class="id" title="var">b</span> \})<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5, <span class="id" title="var">b</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;］-∞ , b ［" := (\{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">x</span> &lt; <span class="id" title="var">b</span> \})<br/>
+&nbsp;&nbsp;(<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5, <span class="id" title="var">b</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;]-∞ , +∞[" := <span class="id" title="var">ℝ</span> (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Neighbourhood</span> <span class="id" title="var">x</span> <span class="id" title="var">δ</span> := <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">δ</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">x</span> ∈ ］(<span class="id" title="var">x</span> - <span class="id" title="var">δ</span>),(<span class="id" title="var">x</span> + <span class="id" title="var">δ</span>)［.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Neighbor</span> <span class="id" title="var">a</span> <span class="id" title="var">δ</span> := \{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> /\ ｜ (<span class="id" title="var">x</span> - <span class="id" title="var">a</span>) ｜ &lt; <span class="id" title="var">δ</span> \}.<br/>
+<span class="id" title="keyword">Notation</span> &quot;U( a ; δ )" := (<span class="id" title="var">Neighbor</span> <span class="id" title="var">a</span> <span class="id" title="var">δ</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="var">a</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">δ</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 4) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">leftNeighbor</span> <span class="id" title="var">a</span> <span class="id" title="var">δ</span> := ］<span class="id" title="var">a</span>-<span class="id" title="var">δ</span>, <span class="id" title="var">a</span>］.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">rightNeighbor</span> <span class="id" title="var">a</span> <span class="id" title="var">δ</span> := ［<span class="id" title="var">a</span>, (<span class="id" title="var">a</span>+<span class="id" title="var">δ</span>)［.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Neighbor0</span> <span class="id" title="var">a</span> <span class="id" title="var">δ</span> := \{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> <br/>
+&nbsp;&nbsp;/\ 0 &lt; ｜(<span class="id" title="var">x</span>-<span class="id" title="var">a</span>)｜ /\ ｜(<span class="id" title="var">x</span>-<span class="id" title="var">a</span>)｜ &lt; <span class="id" title="var">δ</span> \}.<br/>
+<span class="id" title="keyword">Notation</span> &quot;Uº( a ; δ )" := (<span class="id" title="var">Neighbor0</span> <span class="id" title="var">a</span> <span class="id" title="var">δ</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="var">a</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">δ</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 4) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">leftNeighbor0</span> <span class="id" title="var">a</span> <span class="id" title="var">δ</span> := ］<span class="id" title="var">a</span>-<span class="id" title="var">δ</span>, <span class="id" title="var">a</span>［.<br/>
+<span class="id" title="keyword">Notation</span> &quot;U-º( a ; δ )" := (<span class="id" title="var">leftNeighbor0</span> <span class="id" title="var">a</span> <span class="id" title="var">δ</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="var">a</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">δ</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 4) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">rightNeighbor0</span> <span class="id" title="var">a</span> <span class="id" title="var">δ</span> := ］<span class="id" title="var">a</span>, (<span class="id" title="var">a</span>+<span class="id" title="var">δ</span>)［.<br/>
+<span class="id" title="keyword">Notation</span> &quot;U+º( a ; δ )" := (<span class="id" title="var">rightNeighbor0</span> <span class="id" title="var">a</span> <span class="id" title="var">δ</span>)<br/>
+&nbsp;&nbsp;(<span class="id" title="var">a</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="var">δ</span> <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0, <span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 4) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Neighbor_infinity</span> <span class="id" title="var">M</span> := \{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">M</span> ∈ <span class="id" title="var">ℝ</span><br/>
+&nbsp;&nbsp;/\ 0 &lt; <span class="id" title="var">M</span> /\ <span class="id" title="var">M</span> &lt; ｜<span class="id" title="var">x</span>｜ \}.<br/>
+<span class="id" title="keyword">Notation</span> &quot;U(∞) M" := (<span class="id" title="var">Neighbor_infinity</span> <span class="id" title="var">M</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">PNeighbor_infinity</span> <span class="id" title="var">M</span> := \{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">M</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">M</span> &lt; <span class="id" title="var">x</span> \}.<br/>
+<span class="id" title="keyword">Notation</span> &quot;U(+∞) M" := (［ <span class="id" title="var">M</span> , +∞［) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">NNeighbor_infinity</span> <span class="id" title="var">M</span> := \{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">M</span> ∈ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">x</span> &lt; <span class="id" title="var">M</span> \}.<br/>
+<span class="id" title="keyword">Notation</span> &quot;U(-∞) M" := (］-∞ , <span class="id" title="var">M</span> ［) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">UpperBound</span> <span class="id" title="var">S</span> <span class="id" title="var">M</span> := <span class="id" title="var">S</span> ⊂ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">M</span> ∈ <span class="id" title="var">ℝ</span> /\ (∀ <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">S</span> -&gt; <span class="id" title="var">x</span> ≤ <span class="id" title="var">M</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">LowerBound</span> <span class="id" title="var">S</span> <span class="id" title="var">L</span> := <span class="id" title="var">S</span> ⊂ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">L</span> ∈ <span class="id" title="var">ℝ</span> /\ (∀ <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">S</span> -&gt; <span class="id" title="var">L</span> ≤ <span class="id" title="var">x</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Bounded</span> <span class="id" title="var">S</span> := ∃ <span class="id" title="var">M</span> <span class="id" title="var">L</span>, <span class="id" title="var">UpperBound</span> <span class="id" title="var">S</span> <span class="id" title="var">M</span> /\ <span class="id" title="var">LowerBound</span> <span class="id" title="var">S</span> <span class="id" title="var">L</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Unbounded</span> <span class="id" title="var">S</span> := ~ (<span class="id" title="var">Bounded</span> <span class="id" title="var">S</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Sup</span> <span class="id" title="var">S</span> <span class="id" title="var">η</span> := <span class="id" title="var">UpperBound</span> <span class="id" title="var">S</span> <span class="id" title="var">η</span> /\ (∀ <span class="id" title="var">α</span>, <span class="id" title="var">α</span> ∈ <span class="id" title="var">ℝ</span> -&gt; <span class="id" title="var">α</span> &lt; <span class="id" title="var">η</span><br/>
+&nbsp;&nbsp;-&gt; (∃ <span class="id" title="var">x0</span>, <span class="id" title="var">x0</span> ∈ <span class="id" title="var">S</span> /\ <span class="id" title="var">α</span> &lt; <span class="id" title="var">x0</span>)).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Inf</span> <span class="id" title="var">S</span> <span class="id" title="var">ξ</span> := <span class="id" title="var">LowerBound</span> <span class="id" title="var">S</span> <span class="id" title="var">ξ</span> /\ (∀ <span class="id" title="var">β</span>, <span class="id" title="var">β</span> ∈ <span class="id" title="var">ℝ</span> -&gt; <span class="id" title="var">ξ</span> &lt; <span class="id" title="var">β</span><br/>
+&nbsp;&nbsp;-&gt; (∃ <span class="id" title="var">x0</span>, <span class="id" title="var">x0</span> ∈ <span class="id" title="var">S</span> /\ <span class="id" title="var">x0</span> &lt; <span class="id" title="var">β</span>)).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Max</span> <span class="id" title="var">S</span> <span class="id" title="var">c</span> := <span class="id" title="var">S</span> ⊂ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">c</span> ∈ <span class="id" title="var">S</span> /\ (∀ <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">S</span> -&gt; <span class="id" title="var">x</span> ≤ <span class="id" title="var">c</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Min</span> <span class="id" title="var">S</span> <span class="id" title="var">c</span> := <span class="id" title="var">S</span> ⊂ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">c</span> ∈ <span class="id" title="var">S</span> /\ (∀ <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">S</span> -&gt; <span class="id" title="var">c</span> ≤ <span class="id" title="var">x</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Corollary</span> <span class="id" title="var">Max_Corollary</span> : ∀ <span class="id" title="var">S</span> <span class="id" title="var">c1</span> <span class="id" title="var">c2</span>, <span class="id" title="var">Max</span> <span class="id" title="var">S</span> <span class="id" title="var">c1</span> -&gt; <span class="id" title="var">Max</span> <span class="id" title="var">S</span> <span class="id" title="var">c2</span> -&gt; <span class="id" title="var">c1</span> = <span class="id" title="var">c2</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Corollary</span> <span class="id" title="var">Min_Corollary</span> : ∀ <span class="id" title="var">S</span> <span class="id" title="var">c1</span> <span class="id" title="var">c2</span>, <span class="id" title="var">Min</span> <span class="id" title="var">S</span> <span class="id" title="var">c1</span> -&gt; <span class="id" title="var">Min</span> <span class="id" title="var">S</span> <span class="id" title="var">c2</span> -&gt; <span class="id" title="var">c1</span> = <span class="id" title="var">c2</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Sup_Eq</span> <span class="id" title="var">S</span> <span class="id" title="var">η</span> := <span class="id" title="var">Min</span> \{ <span class="id" title="var">λ</span> <span class="id" title="var">u</span>, <span class="id" title="var">UpperBound</span> <span class="id" title="var">S</span> <span class="id" title="var">u</span> \} <span class="id" title="var">η</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Corollary</span> <span class="id" title="var">Sup_Corollary</span> : ∀ <span class="id" title="var">S</span> <span class="id" title="var">η</span>, <span class="id" title="var">Sup</span> <span class="id" title="var">S</span> <span class="id" title="var">η</span> &lt;-&gt; <span class="id" title="var">Sup_Eq</span> <span class="id" title="var">S</span> <span class="id" title="var">η</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Inf_Eq</span> <span class="id" title="var">S</span> <span class="id" title="var">ξ</span> := <span class="id" title="var">Max</span> \{ <span class="id" title="var">λ</span> <span class="id" title="var">u</span>, <span class="id" title="var">LowerBound</span> <span class="id" title="var">S</span> <span class="id" title="var">u</span> \} <span class="id" title="var">ξ</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Corollary</span> <span class="id" title="var">Inf_Corollary</span> : ∀ <span class="id" title="var">S</span> <span class="id" title="var">ξ</span>, <span class="id" title="var">Inf</span> <span class="id" title="var">S</span> <span class="id" title="var">ξ</span> &lt;-&gt; <span class="id" title="var">Inf_Eq</span> <span class="id" title="var">S</span> <span class="id" title="var">ξ</span>.<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">SupLemma</span> : ∀ <span class="id" title="var">X</span>, <span class="id" title="var">X</span> ⊂ <span class="id" title="var">ℝ</span> -&gt; <span class="id" title="var">X</span> &lt;&gt; <span class="id" title="var">Φ</span> -&gt; (∃ <span class="id" title="var">c</span>, <span class="id" title="var">UpperBound</span> <span class="id" title="var">X</span> <span class="id" title="var">c</span>) <br/>
+&nbsp;&nbsp;-&gt; <span class="id" title="tactic">exists</span> ! <span class="id" title="var">η</span>, <span class="id" title="var">Sup</span> <span class="id" title="var">X</span> <span class="id" title="var">η</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Lemma</span> <span class="id" title="var">InfLemma</span> : ∀ <span class="id" title="var">X</span>, <span class="id" title="var">X</span> ⊂ <span class="id" title="var">ℝ</span> -&gt; <span class="id" title="var">X</span> &lt;&gt; <span class="id" title="var">Φ</span> -&gt; (∃ <span class="id" title="var">c</span>, <span class="id" title="var">LowerBound</span> <span class="id" title="var">X</span> <span class="id" title="var">c</span>)<br/>
+&nbsp;&nbsp;-&gt; <span class="id" title="tactic">exists</span> ! <span class="id" title="var">ξ</span>, <span class="id" title="var">Inf</span> <span class="id" title="var">X</span> <span class="id" title="var">ξ</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">Sup_Inf_Principle</span> : ∀ <span class="id" title="var">X</span>, <span class="id" title="var">X</span> ⊂ <span class="id" title="var">ℝ</span> -&gt; <span class="id" title="var">X</span> &lt;&gt; <span class="id" title="var">Φ</span><br/>
+&nbsp;&nbsp;-&gt; ((∃ <span class="id" title="var">c</span>, <span class="id" title="var">UpperBound</span> <span class="id" title="var">X</span> <span class="id" title="var">c</span>) -&gt; <span class="id" title="tactic">exists</span> ! <span class="id" title="var">η</span>, <span class="id" title="var">Sup</span> <span class="id" title="var">X</span> <span class="id" title="var">η</span>)<br/>
+&nbsp;&nbsp;/\ ((∃ <span class="id" title="var">c</span>, <span class="id" title="var">LowerBound</span> <span class="id" title="var">X</span> <span class="id" title="var">c</span>) -&gt; <span class="id" title="tactic">exists</span> ! <span class="id" title="var">ξ</span>, <span class="id" title="var">Inf</span> <span class="id" title="var">X</span> <span class="id" title="var">ξ</span>).<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Ordered</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> := [ [<span class="id" title="var">x</span>] | [<span class="id" title="var">x</span>|<span class="id" title="var">y</span>] ].<br/>
+<span class="id" title="keyword">Notation</span> &quot;[ x , y ]" := (<span class="id" title="var">Ordered</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0) : <span class="id" title="var">MA_R_scope</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">First</span> <span class="id" title="var">z</span> := ∩∩<span class="id" title="var">z</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Second</span> <span class="id" title="var">z</span> := (∩∪<span class="id" title="var">z</span>)∪(∪∪<span class="id" title="var">z</span>) ~ (∪∩<span class="id" title="var">z</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">ProdEqual</span> : ∀ <span class="id" title="var">x</span> <span class="id" title="var">y</span> <span class="id" title="var">u</span> <span class="id" title="var">v</span>, <span class="id" title="var">Ensemble</span> <span class="id" title="var">x</span> -&gt; <span class="id" title="var">Ensemble</span> <span class="id" title="var">y</span><br/>
+&nbsp;&nbsp;-&gt; ([<span class="id" title="var">x</span>, <span class="id" title="var">y</span>] = [<span class="id" title="var">u</span>, <span class="id" title="var">v</span>] &lt;-&gt; <span class="id" title="var">x</span> = <span class="id" title="var">u</span> /\ <span class="id" title="var">y</span> = <span class="id" title="var">v</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Relation</span> <span class="id" title="var">r</span> := ∀ <span class="id" title="var">z</span>, <span class="id" title="var">z</span> ∈ <span class="id" title="var">r</span> -&gt; (∃ <span class="id" title="var">x</span> <span class="id" title="var">y</span>, <span class="id" title="var">z</span> = [<span class="id" title="var">x</span>, <span class="id" title="var">y</span>]).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Composition</span> <span class="id" title="var">r</span> <span class="id" title="var">s</span> := \{\ <span class="id" title="var">λ</span> <span class="id" title="var">x</span> <span class="id" title="var">z</span>, ∃ <span class="id" title="var">y</span>, [<span class="id" title="var">x</span>,<span class="id" title="var">y</span>] ∈ <span class="id" title="var">s</span> /\ [<span class="id" title="var">y</span>,<span class="id" title="var">z</span>] ∈ <span class="id" title="var">r</span> \}\.<br/>
+<span class="id" title="keyword">Notation</span> &quot;r ∘ s" := (<span class="id" title="var">Composition</span> <span class="id" title="var">r</span> <span class="id" title="var">s</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 50).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Inverse</span> <span class="id" title="var">r</span> := \{\ <span class="id" title="var">λ</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>, [<span class="id" title="var">y</span>, <span class="id" title="var">x</span>] ∈ <span class="id" title="var">r</span> \}\.<br/>
+<span class="id" title="keyword">Notation</span> &quot;r ⁻¹" := (<span class="id" title="var">Inverse</span> <span class="id" title="var">r</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5).<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;\{\ P \}\" :=<br/>
+&nbsp;&nbsp;(\{ <span class="id" title="var">λ</span> <span class="id" title="var">z</span>, ∃ <span class="id" title="var">x</span> <span class="id" title="var">y</span>, <span class="id" title="var">z</span> = [<span class="id" title="var">x</span>,<span class="id" title="var">y</span>] /\ <span class="id" title="var">P</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span> \}) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 0).<br/>
+
+<br/>
+<span class="id" title="keyword">Fact</span> <span class="id" title="var">AxiomII'</span> : ∀ <span class="id" title="var">a</span> <span class="id" title="var">b</span> <span class="id" title="var">P</span>,<br/>
+&nbsp;&nbsp;[<span class="id" title="var">a</span>,<span class="id" title="var">b</span>] ∈ \{\ <span class="id" title="var">P</span> \}\ &lt;-&gt; <span class="id" title="var">Ensemble</span> ([<span class="id" title="var">a</span>,<span class="id" title="var">b</span>]) /\ (<span class="id" title="var">P</span> <span class="id" title="var">a</span> <span class="id" title="var">b</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span> := <br/>
+&nbsp;&nbsp;<span class="id" title="var">Relation</span> <span class="id" title="var">f</span> /\ (∀ <span class="id" title="var">x</span> <span class="id" title="var">y</span> <span class="id" title="var">z</span>, [<span class="id" title="var">x</span>,<span class="id" title="var">y</span>] ∈ <span class="id" title="var">f</span> -&gt; [<span class="id" title="var">x</span>,<span class="id" title="var">z</span>] ∈ <span class="id" title="var">f</span> -&gt; <span class="id" title="var">y</span> = <span class="id" title="var">z</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Domain</span> <span class="id" title="var">f</span> := \{ <span class="id" title="var">λ</span> <span class="id" title="var">x</span>, ∃ <span class="id" title="var">y</span>, [<span class="id" title="var">x</span>,<span class="id" title="var">y</span>] ∈ <span class="id" title="var">f</span> \}.<br/>
+<span class="id" title="keyword">Notation</span> &quot;dom( f )" := (<span class="id" title="var">Domain</span> <span class="id" title="var">f</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Range</span> <span class="id" title="var">f</span> := \{ <span class="id" title="var">λ</span> <span class="id" title="var">y</span>, ∃ <span class="id" title="var">x</span>, [<span class="id" title="var">x</span>,<span class="id" title="var">y</span>] ∈ <span class="id" title="var">f</span> \}.<br/>
+<span class="id" title="keyword">Notation</span> &quot;ran( f )" := (<span class="id" title="var">Range</span> <span class="id" title="var">f</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Value</span> <span class="id" title="var">f</span> <span class="id" title="var">x</span> := ∩\{ <span class="id" title="var">λ</span> <span class="id" title="var">y</span>, [<span class="id" title="var">x</span>,<span class="id" title="var">y</span>] ∈ <span class="id" title="var">f</span> \}.<br/>
+<span class="id" title="keyword">Notation</span> &quot;f [ x ]" := (<span class="id" title="var">Value</span> <span class="id" title="var">f</span> <span class="id" title="var">x</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 5).<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Plus_Fun</span> <span class="id" title="var">f</span> <span class="id" title="var">g</span> :=<br/>
+&nbsp;&nbsp;\{\ <span class="id" title="var">λ</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) /\ <span class="id" title="var">x</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">g</span>) /\ <span class="id" title="var">y</span> = <span class="id" title="var">f</span>[<span class="id" title="var">x</span>] + <span class="id" title="var">g</span>[<span class="id" title="var">x</span>] \}\.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Sub_Fun</span> <span class="id" title="var">f</span> <span class="id" title="var">g</span> :=<br/>
+&nbsp;&nbsp;\{\ <span class="id" title="var">λ</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) /\ <span class="id" title="var">x</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">g</span>) /\ <span class="id" title="var">y</span> = <span class="id" title="var">f</span>[<span class="id" title="var">x</span>] - <span class="id" title="var">g</span>[<span class="id" title="var">x</span>] \}\.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Mult_Fun</span> <span class="id" title="var">f</span> <span class="id" title="var">g</span> :=<br/>
+&nbsp;&nbsp;\{\ <span class="id" title="var">λ</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) /\ <span class="id" title="var">x</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">g</span>) /\ <span class="id" title="var">y</span> = <span class="id" title="var">f</span>[<span class="id" title="var">x</span>] · <span class="id" title="var">g</span>[<span class="id" title="var">x</span>] \}\.<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Div_Fun</span> <span class="id" title="var">f</span> <span class="id" title="var">g</span> :=<br/>
+&nbsp;&nbsp;\{\ <span class="id" title="var">λ</span> <span class="id" title="var">x</span> <span class="id" title="var">y</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) /\ <span class="id" title="var">x</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">g</span>) /\ <span class="id" title="var">g</span>[<span class="id" title="var">x</span>] &lt;&gt; 0 /\ <span class="id" title="var">y</span> = <span class="id" title="var">f</span>[<span class="id" title="var">x</span>] / <span class="id" title="var">g</span>[<span class="id" title="var">x</span>] \}\.<br/>
+
+<br/>
+<span class="id" title="keyword">Notation</span> &quot;f \+ g" := (<span class="id" title="var">Plus_Fun</span> <span class="id" title="var">f</span> <span class="id" title="var">g</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 45, <span class="id" title="tactic">left</span> <span class="id" title="keyword">associativity</span>).<br/>
+<span class="id" title="keyword">Notation</span> &quot;f \- g" := (<span class="id" title="var">Sub_Fun</span> <span class="id" title="var">f</span> <span class="id" title="var">g</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 45, <span class="id" title="tactic">left</span> <span class="id" title="keyword">associativity</span>).<br/>
+<span class="id" title="keyword">Notation</span> &quot;f \· g" := (<span class="id" title="var">Mult_Fun</span> <span class="id" title="var">f</span> <span class="id" title="var">g</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 40, <span class="id" title="tactic">left</span> <span class="id" title="keyword">associativity</span>).<br/>
+<span class="id" title="keyword">Notation</span> &quot;f // g" := (<span class="id" title="var">Div_Fun</span> <span class="id" title="var">f</span> <span class="id" title="var">g</span>) (<span class="id" title="tactic">at</span> <span class="id" title="keyword">level</span> 40, <span class="id" title="tactic">left</span> <span class="id" title="keyword">associativity</span>).<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Comp</span> : ∀ <span class="id" title="var">f</span> <span class="id" title="var">g</span>, <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span> -&gt; <span class="id" title="keyword">Function</span> <span class="id" title="var">g</span> -&gt; <span class="id" title="keyword">Function</span> (<span class="id" title="var">f</span> ∘ <span class="id" title="var">g</span>).<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">Inverse_Fun</span> <span class="id" title="var">f</span> <span class="id" title="var">g</span> := <span class="id" title="var">Function1_1</span> <span class="id" title="var">f</span> /\ <span class="id" title="var">g</span> = <span class="id" title="var">f⁻¹</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Corollary</span> <span class="id" title="var">Inverse_Co1</span> : ∀ <span class="id" title="var">f</span> <span class="id" title="var">u</span>, <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span> -&gt; <span class="id" title="keyword">Function</span> <span class="id" title="var">f⁻¹</span> -&gt; <span class="id" title="var">u</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>)<br/>
+&nbsp;&nbsp;-&gt; (<span class="id" title="var">f⁻¹</span>)[<span class="id" title="var">f</span>[<span class="id" title="var">u</span>]] = <span class="id" title="var">u</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Corollary</span> <span class="id" title="var">Inverse_Co2</span>: ∀ <span class="id" title="var">f</span> <span class="id" title="var">u</span>, <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span> -&gt; <span class="id" title="keyword">Function</span> <span class="id" title="var">f⁻¹</span> -&gt; <span class="id" title="var">u</span> ∈ <span class="id" title="var">ran</span>(<span class="id" title="var">f</span>)<br/>
+&nbsp;&nbsp;-&gt; <span class="id" title="var">f</span>[(<span class="id" title="var">f⁻¹</span>)[<span class="id" title="var">u</span>]] = <span class="id" title="var">u</span>.<br/>
+
+<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">UpBoundedFun</span> <span class="id" title="var">f</span> <span class="id" title="var">D</span> : <span class="id" title="keyword">Prop</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Function</span> <span class="id" title="var">f</span> /\ <span class="id" title="var">D</span> = <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) /\ (∃ <span class="id" title="var">M</span>, <span class="id" title="var">M</span> ∈ <span class="id" title="var">ℝ</span> /\ ∀ <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">D</span> -&gt; <span class="id" title="var">f</span>[<span class="id" title="var">x</span>] ≤ <span class="id" title="var">M</span>).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">LowBoundedFun</span> <span class="id" title="var">f</span> <span class="id" title="var">D</span> : <span class="id" title="keyword">Prop</span> :=<br/>
+&nbsp;&nbsp;<span class="id" title="keyword">Function</span> <span class="id" title="var">f</span> /\ <span class="id" title="var">D</span> = <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) /\ (∃ <span class="id" title="var">L</span>, <span class="id" title="var">L</span> ∈ <span class="id" title="var">ℝ</span> /\ ∀ <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">D</span> -&gt; <span class="id" title="var">L</span> ≤ <span class="id" title="var">f</span>[<span class="id" title="var">x</span>]).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">BoundedFun</span> <span class="id" title="var">f</span> <span class="id" title="var">D</span> : <span class="id" title="keyword">Prop</span> := <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span> /\ <span class="id" title="var">D</span> = <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) <br/>
+&nbsp;&nbsp;/\ (∃ <span class="id" title="var">M</span>, <span class="id" title="var">M</span> ∈ <span class="id" title="var">ℝ</span> -&gt; 0 &lt; <span class="id" title="var">M</span> /\ ∀ <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">D</span> -&gt; ｜[<span class="id" title="var">f</span>[<span class="id" title="var">x</span>]]｜ ≤ <span class="id" title="var">M</span>).<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">IncreaseFun</span> <span class="id" title="var">f</span> := <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span><br/>
+&nbsp;&nbsp;/\ (∀ <span class="id" title="var">x1</span> <span class="id" title="var">x2</span>, <span class="id" title="var">x1</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) -&gt; <span class="id" title="var">x2</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) -&gt; <span class="id" title="var">x1</span> &lt; <span class="id" title="var">x2</span> -&gt; <span class="id" title="var">f</span>[<span class="id" title="var">x1</span>] ≤ <span class="id" title="var">f</span>[<span class="id" title="var">x2</span>]).<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">StrictIncreaseFun</span> <span class="id" title="var">f</span> := <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span><br/>
+&nbsp;&nbsp;/\ (∀ <span class="id" title="var">x1</span> <span class="id" title="var">x2</span>, <span class="id" title="var">x1</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) -&gt; <span class="id" title="var">x2</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) -&gt; <span class="id" title="var">x1</span> &lt; <span class="id" title="var">x2</span> -&gt; <span class="id" title="var">f</span>[<span class="id" title="var">x1</span>] &lt; <span class="id" title="var">f</span>[<span class="id" title="var">x2</span>]).<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">DecreaseFun</span> <span class="id" title="var">f</span> := <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span><br/>
+&nbsp;&nbsp;/\ (∀ <span class="id" title="var">x1</span> <span class="id" title="var">x2</span>, <span class="id" title="var">x1</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) -&gt; <span class="id" title="var">x2</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) -&gt; <span class="id" title="var">x1</span> &lt; <span class="id" title="var">x2</span> -&gt; <span class="id" title="var">f</span>[<span class="id" title="var">x2</span>] ≤ <span class="id" title="var">f</span>[<span class="id" title="var">x2</span>]).<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">StrictDecreaseFun</span> <span class="id" title="var">f</span> := <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span><br/>
+&nbsp;&nbsp;/\ (∀ <span class="id" title="var">x1</span> <span class="id" title="var">x2</span>, <span class="id" title="var">x1</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) -&gt; <span class="id" title="var">x2</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) -&gt; <span class="id" title="var">x1</span> &lt; <span class="id" title="var">x2</span> -&gt; <span class="id" title="var">f</span>[<span class="id" title="var">x2</span>] &lt; <span class="id" title="var">f</span>[<span class="id" title="var">x1</span>]).<br/>
+
+<br/>
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">Theorem1_2_1</span> : ∀ <span class="id" title="var">f</span>, <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span> -&gt; <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) ⊂ <span class="id" title="var">ℝ</span> -&gt; <span class="id" title="var">ran</span>(<span class="id" title="var">f</span>) ⊂ <span class="id" title="var">ℝ</span><br/>
+&nbsp;&nbsp;-&gt; <span class="id" title="var">StrictIncreaseFun</span> <span class="id" title="var">f</span> -&gt; <span class="id" title="var">StrictIncreaseFun</span> <span class="id" title="var">f⁻¹</span>.<br/>
+
+<br/>
+<span class="id" title="keyword">Theorem</span> <span class="id" title="var">Theorem1_2_2</span> : ∀ <span class="id" title="var">f</span>, <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span> -&gt; <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) ⊂ <span class="id" title="var">ℝ</span> -&gt; <span class="id" title="var">ran</span>(<span class="id" title="var">f</span>) ⊂ <span class="id" title="var">ℝ</span> <br/>
+&nbsp;&nbsp;-&gt; <span class="id" title="var">StrictDecreaseFun</span> <span class="id" title="var">f</span> -&gt; <span class="id" title="var">StrictDecreaseFun</span> <span class="id" title="var">f⁻¹</span>.<br/>
+
+<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">OddFun</span> <span class="id" title="var">f</span> := <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span> /\ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) ⊂ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">ran</span>(<span class="id" title="var">f</span>) ⊂ <span class="id" title="var">ℝ</span><br/>
+&nbsp;&nbsp;/\ (∀ <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) -&gt; <span class="id" title="var">f</span>[-<span class="id" title="var">x</span>] = -<span class="id" title="var">f</span>[<span class="id" title="var">x</span>]).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">EvenFun</span> <span class="id" title="var">f</span> := <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span> /\ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) ⊂ <span class="id" title="var">ℝ</span> /\ <span class="id" title="var">ran</span>(<span class="id" title="var">f</span>) ⊂ <span class="id" title="var">ℝ</span><br/>
+&nbsp;&nbsp;/\ (∀ <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) -&gt; <span class="id" title="var">f</span>[-<span class="id" title="var">x</span>] = <span class="id" title="var">f</span>[<span class="id" title="var">x</span>]).<br/>
+
+<br/>
+<span class="id" title="keyword">Definition</span> <span class="id" title="var">PeriodicFun</span> <span class="id" title="var">f</span> := <span class="id" title="keyword">Function</span> <span class="id" title="var">f</span> /\ (∃ σ, σ ∈ <span class="id" title="var">ℝ</span> -&gt; 0 &lt; σ <br/>
+&nbsp;&nbsp;/\ (∀ <span class="id" title="var">x</span>, <span class="id" title="var">x</span> ∈ <span class="id" title="var">ℝ</span> -&gt; <span class="id" title="var">x</span> ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) -&gt; (<span class="id" title="var">x</span> + σ ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) -&gt; <span class="id" title="var">f</span>[<span class="id" title="var">x</span> + σ] = <span class="id" title="var">f</span>[<span class="id" title="var">x</span>])<br/>
+&nbsp;&nbsp;/\ (<span class="id" title="var">x</span> - σ ∈ <span class="id" title="var">dom</span>(<span class="id" title="var">f</span>) -&gt; <span class="id" title="var">f</span>[<span class="id" title="var">x</span> - σ] = <span class="id" title="var">f</span>[<span class="id" title="var">x</span>]))).<br/>
+
+<br/>
+</div>
+<table>
+<tr>
+<td>Global Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index.html#global_M">M</a></td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(1 entry)</td>
+</tr>
+<tr>
+<td>Library Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index.html#library_M">M</a></td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(1 entry)</td>
+</tr>
+</table>
+<hr/>
+<h1>Global Index</h1>
+<a id="global_M"></a><h2>M </h2>
+<a href="MA_CH.html">MA_CH</a> [library]<br/>
+<br/><br/><hr/>
+<h1>Library Index</h1>
+<a id="library_M"></a><h2>M </h2>
+<a href="MA_CH.html">MA_CH</a> <br/>
+<br/><br/><hr/><table>
+<tr>
+<td>Global Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index.html#global_M">M</a></td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(1 entry)</td>
+</tr>
+<tr>
+<td>Library Index</td>
+<td>A</td>
+<td>B</td>
+<td>C</td>
+<td>D</td>
+<td>E</td>
+<td>F</td>
+<td>G</td>
+<td>H</td>
+<td>I</td>
+<td>J</td>
+<td>K</td>
+<td>L</td>
+<td><a href="index.html#library_M">M</a></td>
+<td>N</td>
+<td>O</td>
+<td>P</td>
+<td>Q</td>
+<td>R</td>
+<td>S</td>
+<td>T</td>
+<td>U</td>
+<td>V</td>
+<td>W</td>
+<td>X</td>
+<td>Y</td>
+<td>Z</td>
+<td>_</td>
+<td>other</td>
+<td>(1 entry)</td>
+</tr>
+</table>
+<hr/>This page has been generated by <a href="http://coq.inria.fr/">coqdoc</a>
+</div>
+
+</div>
+
+</body>
+</html>

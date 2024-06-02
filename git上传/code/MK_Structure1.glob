@@ -1,0 +1,1281 @@
+DIGEST c86f8761479d20e3dbcb5d3250273e44
+FMK_Structure1
+R651:662 Pre_MK_Logic <> <> lib
+ax 827:831 <> Class
+ax 852:853 <> In
+R862:865 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R857:861 MK_Structure1 <> Class defax
+R871:874 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R866:870 MK_Structure1 <> Class defax
+R904:905 MK_Structure1 <> In defax
+not 890:890 <> :::x_'∈'_x
+ax 938:947 <> Classifier
+R951:951 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R965:969 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R957:960 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R952:956 MK_Structure1 <> Class defax
+R970:974 MK_Structure1 <> Class defax
+R1000:1009 MK_Structure1 <> Classifier defax
+not 986:986 <> :::'\{'_x_'\}'
+def 1123:1130 <> Ensemble
+binder 1132:1132 <> x:4
+R1137:1140 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R1142:1143 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 1141:1141 <> y:5
+R1145:1149 MK_Structure1 <> :::x_'∈'_x not
+R1144:1144 MK_Structure1 <> x:4 var
+R1150:1150 MK_Structure1 <> y:5 var
+R1173:1180 MK_Structure1 <> Ensemble def
+def 1241:1245 <> Union
+binder 1247:1247 <> x:6
+binder 1249:1249 <> y:7
+R1254:1256 MK_Structure1 <> :::'\{'_x_'\}' not
+R1281:1283 MK_Structure1 <> :::'\{'_x_'\}' not
+R1257:1259 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R1261:1262 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 1260:1260 <> z:8
+R1270:1273 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R1264:1268 MK_Structure1 <> :::x_'∈'_x not
+R1263:1263 MK_Structure1 <> z:8 var
+R1269:1269 MK_Structure1 <> x:6 var
+R1275:1279 MK_Structure1 <> :::x_'∈'_x not
+R1274:1274 MK_Structure1 <> z:8 var
+R1280:1280 MK_Structure1 <> y:7 var
+R1310:1314 MK_Structure1 <> Union def
+not 1296:1296 <> :::x_'∪'_x
+def 1417:1428 <> Intersection
+binder 1430:1430 <> x:9
+binder 1432:1432 <> y:10
+R1437:1439 MK_Structure1 <> :::'\{'_x_'\}' not
+R1464:1466 MK_Structure1 <> :::'\{'_x_'\}' not
+R1440:1442 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R1444:1445 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 1443:1443 <> z:11
+R1453:1456 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1447:1451 MK_Structure1 <> :::x_'∈'_x not
+R1446:1446 MK_Structure1 <> z:11 var
+R1452:1452 MK_Structure1 <> x:9 var
+R1458:1462 MK_Structure1 <> :::x_'∈'_x not
+R1457:1457 MK_Structure1 <> z:11 var
+R1463:1463 MK_Structure1 <> y:10 var
+R1493:1504 MK_Structure1 <> Intersection def
+not 1479:1479 <> :::x_'∩'_x
+def 1603:1607 <> NotIn
+binder 1609:1609 <> x:12
+binder 1611:1611 <> y:13
+R1616:1618 Coq.Init.Logic <> ::type_scope:'~'_x not
+R1626:1626 Coq.Init.Logic <> ::type_scope:'~'_x not
+R1620:1624 MK_Structure1 <> :::x_'∈'_x not
+R1619:1619 MK_Structure1 <> x:12 var
+R1625:1625 MK_Structure1 <> y:13 var
+R1653:1657 MK_Structure1 <> NotIn def
+not 1639:1639 <> :::x_'∉'_x
+def 1723:1732 <> Complement
+binder 1734:1734 <> x:14
+R1739:1740 MK_Structure1 <> :::'\{'_x_'\}' not
+R1754:1756 MK_Structure1 <> :::'\{'_x_'\}' not
+R1741:1743 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R1745:1746 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 1744:1744 <> y:15
+R1748:1752 MK_Structure1 <> :::x_'∉'_x not
+R1747:1747 MK_Structure1 <> y:15 var
+R1753:1753 MK_Structure1 <> x:14 var
+R1780:1789 MK_Structure1 <> Complement def
+not 1769:1769 <> :::'¬'_x
+def 1872:1879 <> Setminus
+binder 1881:1881 <> x:16
+binder 1883:1883 <> y:17
+R1889:1894 MK_Structure1 <> :::x_'∩'_x not
+R1899:1899 MK_Structure1 <> :::x_'∩'_x not
+R1888:1888 MK_Structure1 <> x:16 var
+R1895:1897 MK_Structure1 <> :::'¬'_x not
+R1898:1898 MK_Structure1 <> y:17 var
+R1924:1931 MK_Structure1 <> Setminus def
+not 1912:1912 <> :::x_'~'_x
+R2043:2045 Coq.Init.Logic <> ::type_scope:'~'_x not
+R2051:2051 Coq.Init.Logic <> ::type_scope:'~'_x not
+R2047:2049 Coq.Init.Logic <> ::type_scope:x_'='_x not
+not 2029:2029 <> :::x_'≠'_x
+def 2110:2111 <> Φ
+R2116:2117 MK_Structure1 <> :::'\{'_x_'\}' not
+R2131:2133 MK_Structure1 <> :::'\{'_x_'\}' not
+R2118:2120 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R2122:2123 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 2121:2121 <> x:18
+R2125:2129 MK_Structure1 <> :::x_'≠'_x not
+R2124:2124 MK_Structure1 <> x:18 var
+R2130:2130 MK_Structure1 <> x:18 var
+def 2182:2183 <> μ
+R2188:2190 MK_Structure1 <> :::'\{'_x_'\}' not
+R2202:2204 MK_Structure1 <> :::'\{'_x_'\}' not
+R2191:2193 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R2195:2196 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 2194:2194 <> x:19
+R2198:2200 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2197:2197 MK_Structure1 <> x:19 var
+R2201:2201 MK_Structure1 <> x:19 var
+def 2284:2292 <> Element_I
+binder 2294:2294 <> x:20
+R2299:2301 MK_Structure1 <> :::'\{'_x_'\}' not
+R2333:2335 MK_Structure1 <> :::'\{'_x_'\}' not
+R2302:2304 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R2306:2307 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 2305:2305 <> z:21
+R2308:2311 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2313:2314 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 2312:2312 <> y:22
+R2322:2325 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2316:2320 MK_Structure1 <> :::x_'∈'_x not
+R2315:2315 MK_Structure1 <> y:22 var
+R2321:2321 MK_Structure1 <> x:20 var
+R2327:2331 MK_Structure1 <> :::x_'∈'_x not
+R2326:2326 MK_Structure1 <> z:21 var
+R2332:2332 MK_Structure1 <> y:22 var
+R2360:2368 MK_Structure1 <> Element_I def
+not 2348:2348 <> :::'∩'_x
+def 2458:2466 <> Element_U
+binder 2468:2468 <> x:23
+R2473:2475 MK_Structure1 <> :::'\{'_x_'\}' not
+R2507:2509 MK_Structure1 <> :::'\{'_x_'\}' not
+R2476:2478 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R2480:2481 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 2479:2479 <> z:24
+R2482:2485 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R2487:2488 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 2486:2486 <> y:25
+R2496:2499 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2490:2494 MK_Structure1 <> :::x_'∈'_x not
+R2489:2489 MK_Structure1 <> z:24 var
+R2495:2495 MK_Structure1 <> y:25 var
+R2501:2505 MK_Structure1 <> :::x_'∈'_x not
+R2500:2500 MK_Structure1 <> y:25 var
+R2506:2506 MK_Structure1 <> x:23 var
+R2534:2542 MK_Structure1 <> Element_U def
+not 2522:2522 <> :::'∪'_x
+def 2647:2654 <> Included
+binder 2656:2656 <> x:26
+binder 2658:2658 <> y:27
+R2663:2666 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R2668:2669 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 2667:2667 <> z:28
+R2677:2680 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2671:2675 MK_Structure1 <> :::x_'∈'_x not
+R2670:2670 MK_Structure1 <> z:28 var
+R2676:2676 MK_Structure1 <> x:26 var
+R2682:2686 MK_Structure1 <> :::x_'∈'_x not
+R2681:2681 MK_Structure1 <> z:28 var
+R2687:2687 MK_Structure1 <> y:27 var
+R2714:2721 MK_Structure1 <> Included def
+not 2700:2700 <> :::x_'⊂'_x
+def 2788:2797 <> PowerClass
+binder 2799:2799 <> x:29
+R2804:2806 MK_Structure1 <> :::'\{'_x_'\}' not
+R2820:2822 MK_Structure1 <> :::'\{'_x_'\}' not
+R2807:2809 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R2811:2812 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 2810:2810 <> y:30
+R2814:2818 MK_Structure1 <> :::x_'⊂'_x not
+R2813:2813 MK_Structure1 <> y:30 var
+R2819:2819 MK_Structure1 <> x:29 var
+R2850:2859 MK_Structure1 <> PowerClass def
+not 2835:2835 <> :::'pow('_x_')'
+def 2959:2967 <> Singleton
+binder 2969:2969 <> x:31
+R2974:2976 MK_Structure1 <> :::'\{'_x_'\}' not
+R3000:3002 MK_Structure1 <> :::'\{'_x_'\}' not
+R2977:2979 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R2981:2982 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 2980:2980 <> z:32
+R2991:2994 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2984:2988 MK_Structure1 <> :::x_'∈'_x not
+R2983:2983 MK_Structure1 <> x:31 var
+R2989:2990 MK_Structure1 <> μ def
+R2996:2998 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R2995:2995 MK_Structure1 <> z:32 var
+R2999:2999 MK_Structure1 <> x:31 var
+R3027:3035 MK_Structure1 <> Singleton def
+not 3015:3015 <> :::'['_x_']'
+def 3119:3127 <> Unordered
+binder 3129:3129 <> x:33
+binder 3131:3131 <> y:34
+R3139:3143 MK_Structure1 <> :::x_'∪'_x not
+R3136:3136 MK_Structure1 <> :::'['_x_']' not
+R3138:3138 MK_Structure1 <> :::'['_x_']' not
+R3137:3137 MK_Structure1 <> x:33 var
+R3144:3144 MK_Structure1 <> :::'['_x_']' not
+R3146:3146 MK_Structure1 <> :::'['_x_']' not
+R3145:3145 MK_Structure1 <> y:34 var
+R3175:3183 MK_Structure1 <> Unordered def
+not 3159:3159 <> :::'['_x_'|'_x_']'
+def 3252:3258 <> Ordered
+binder 3260:3260 <> x:35
+binder 3262:3262 <> y:36
+R3267:3268 MK_Structure1 <> :::'['_x_'|'_x_']' not
+R3272:3274 MK_Structure1 <> :::'['_x_'|'_x_']' not
+R3280:3280 MK_Structure1 <> :::'['_x_'|'_x_']' not
+R3269:3269 MK_Structure1 <> :::'['_x_']' not
+R3271:3271 MK_Structure1 <> :::'['_x_']' not
+R3270:3270 MK_Structure1 <> x:35 var
+R3275:3275 MK_Structure1 <> :::'['_x_'|'_x_']' not
+R3277:3277 MK_Structure1 <> :::'['_x_'|'_x_']' not
+R3279:3279 MK_Structure1 <> :::'['_x_'|'_x_']' not
+R3276:3276 MK_Structure1 <> x:35 var
+R3278:3278 MK_Structure1 <> y:36 var
+R3309:3315 MK_Structure1 <> Ordered def
+not 3293:3293 <> :::'['_x_','_x_']'
+def 3386:3390 <> First
+binder 3392:3392 <> z:37
+R3397:3399 MK_Structure1 <> :::'∩'_x not
+R3400:3402 MK_Structure1 <> :::'∩'_x not
+R3403:3403 MK_Structure1 <> z:37 var
+def 3480:3485 <> Second
+binder 3487:3487 <> z:38
+R3492:3492 MK_Structure1 <> :::x_'∪'_x not
+R3500:3503 MK_Structure1 <> :::x_'∪'_x not
+R3493:3495 MK_Structure1 <> :::'∩'_x not
+R3496:3498 MK_Structure1 <> :::'∪'_x not
+R3499:3499 MK_Structure1 <> z:38 var
+R3504:3504 MK_Structure1 <> :::x_'~'_x not
+R3512:3516 MK_Structure1 <> :::x_'~'_x not
+R3524:3524 MK_Structure1 <> :::x_'~'_x not
+R3505:3507 MK_Structure1 <> :::'∪'_x not
+R3508:3510 MK_Structure1 <> :::'∪'_x not
+R3511:3511 MK_Structure1 <> z:38 var
+R3517:3519 MK_Structure1 <> :::'∪'_x not
+R3520:3522 MK_Structure1 <> :::'∩'_x not
+R3523:3523 MK_Structure1 <> z:38 var
+def 3675:3682 <> Relation
+binder 3684:3684 <> r:39
+R3689:3692 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R3694:3695 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 3693:3693 <> z:40
+R3703:3706 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R3697:3701 MK_Structure1 <> :::x_'∈'_x not
+R3696:3696 MK_Structure1 <> z:40 var
+R3702:3702 MK_Structure1 <> r:39 var
+R3707:3710 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R3714:3715 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 3711:3711 <> x:41
+binder 3713:3713 <> y:42
+R3717:3719 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3716:3716 MK_Structure1 <> z:40 var
+R3720:3720 MK_Structure1 <> :::'['_x_','_x_']' not
+R3722:3722 MK_Structure1 <> :::'['_x_','_x_']' not
+R3724:3724 MK_Structure1 <> :::'['_x_','_x_']' not
+R3721:3721 MK_Structure1 <> x:41 var
+R3723:3723 MK_Structure1 <> y:42 var
+R3777:3779 MK_Structure1 <> :::'\{'_x_'\}' not
+R3813:3815 MK_Structure1 <> :::'\{'_x_'\}' not
+R3780:3782 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R3784:3785 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 3783:3783 <> z:43
+R3786:3789 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R3793:3794 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 3790:3790 <> x:44
+binder 3792:3792 <> y:45
+R3804:3807 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R3796:3798 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R3795:3795 MK_Structure1 <> z:43 var
+R3799:3799 MK_Structure1 <> :::'['_x_','_x_']' not
+R3801:3801 MK_Structure1 <> :::'['_x_','_x_']' not
+R3803:3803 MK_Structure1 <> :::'['_x_','_x_']' not
+R3800:3800 MK_Structure1 <> x:44 var
+R3802:3802 MK_Structure1 <> y:45 var
+R3810:3810 MK_Structure1 <> x:44 var
+R3812:3812 MK_Structure1 <> y:45 var
+not 3759:3759 <> :::'\{\'_x_'\}\'
+def 3962:3972 <> Composition
+binder 3974:3974 <> r:46
+binder 3976:3976 <> s:47
+R3983:3986 MK_Structure1 <> :::'\{\'_x_'\}\' not
+R4028:4031 MK_Structure1 <> :::'\{\'_x_'\}\' not
+R3987:3989 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R3993:3994 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 3990:3990 <> x:48
+binder 3992:3992 <> z:49
+R3995:3998 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R4000:4001 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 3999:3999 <> y:50
+R4013:4016 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4007:4011 MK_Structure1 <> :::x_'∈'_x not
+R4002:4002 MK_Structure1 <> :::'['_x_','_x_']' not
+R4004:4004 MK_Structure1 <> :::'['_x_','_x_']' not
+R4006:4006 MK_Structure1 <> :::'['_x_','_x_']' not
+R4003:4003 MK_Structure1 <> x:48 var
+R4005:4005 MK_Structure1 <> y:50 var
+R4012:4012 MK_Structure1 <> s:47 var
+R4022:4026 MK_Structure1 <> :::x_'∈'_x not
+R4017:4017 MK_Structure1 <> :::'['_x_','_x_']' not
+R4019:4019 MK_Structure1 <> :::'['_x_','_x_']' not
+R4021:4021 MK_Structure1 <> :::'['_x_','_x_']' not
+R4018:4018 MK_Structure1 <> y:50 var
+R4020:4020 MK_Structure1 <> z:49 var
+R4027:4027 MK_Structure1 <> r:46 var
+R4058:4068 MK_Structure1 <> Composition def
+not 4044:4044 <> :::x_'∘'_x
+def 4144:4150 <> Inverse
+binder 4152:4152 <> r:51
+R4157:4160 MK_Structure1 <> :::'\{\'_x_'\}\' not
+R4180:4183 MK_Structure1 <> :::'\{\'_x_'\}\' not
+R4161:4163 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R4167:4168 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 4164:4164 <> x:52
+binder 4166:4166 <> y:53
+R4174:4178 MK_Structure1 <> :::x_'∈'_x not
+R4169:4169 MK_Structure1 <> :::'['_x_','_x_']' not
+R4171:4171 MK_Structure1 <> :::'['_x_','_x_']' not
+R4173:4173 MK_Structure1 <> :::'['_x_','_x_']' not
+R4170:4170 MK_Structure1 <> y:53 var
+R4172:4172 MK_Structure1 <> x:52 var
+R4179:4179 MK_Structure1 <> r:51 var
+R4210:4216 MK_Structure1 <> Inverse def
+not 4196:4196 <> :::x_'⁻¹'
+def 4393:4400 <> Function
+binder 4402:4402 <> f:54
+R4420:4424 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4471:4471 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R4410:4417 MK_Structure1 <> Relation def
+R4419:4419 MK_Structure1 <> f:54 var
+R4425:4428 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R4434:4435 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 4429:4429 <> x:55
+binder 4431:4431 <> y:56
+binder 4433:4433 <> z:57
+R4447:4450 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4441:4445 MK_Structure1 <> :::x_'∈'_x not
+R4436:4436 MK_Structure1 <> :::'['_x_','_x_']' not
+R4438:4438 MK_Structure1 <> :::'['_x_','_x_']' not
+R4440:4440 MK_Structure1 <> :::'['_x_','_x_']' not
+R4437:4437 MK_Structure1 <> x:55 var
+R4439:4439 MK_Structure1 <> y:56 var
+R4446:4446 MK_Structure1 <> f:54 var
+R4462:4465 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R4456:4460 MK_Structure1 <> :::x_'∈'_x not
+R4451:4451 MK_Structure1 <> :::'['_x_','_x_']' not
+R4453:4453 MK_Structure1 <> :::'['_x_','_x_']' not
+R4455:4455 MK_Structure1 <> :::'['_x_','_x_']' not
+R4452:4452 MK_Structure1 <> x:55 var
+R4454:4454 MK_Structure1 <> z:57 var
+R4461:4461 MK_Structure1 <> f:54 var
+R4467:4469 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R4466:4466 MK_Structure1 <> y:56 var
+R4470:4470 MK_Structure1 <> z:57 var
+def 4549:4554 <> Domain
+binder 4556:4556 <> f:58
+R4561:4563 MK_Structure1 <> :::'\{'_x_'\}' not
+R4588:4590 MK_Structure1 <> :::'\{'_x_'\}' not
+R4564:4566 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R4568:4569 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 4567:4567 <> x:59
+R4570:4573 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R4575:4576 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 4574:4574 <> y:60
+R4582:4586 MK_Structure1 <> :::x_'∈'_x not
+R4577:4577 MK_Structure1 <> :::'['_x_','_x_']' not
+R4579:4579 MK_Structure1 <> :::'['_x_','_x_']' not
+R4581:4581 MK_Structure1 <> :::'['_x_','_x_']' not
+R4578:4578 MK_Structure1 <> x:59 var
+R4580:4580 MK_Structure1 <> y:60 var
+R4587:4587 MK_Structure1 <> f:58 var
+R4618:4623 MK_Structure1 <> Domain def
+not 4603:4603 <> :::'dom('_x_')'
+def 4713:4717 <> Range
+binder 4719:4719 <> f:61
+R4724:4726 MK_Structure1 <> :::'\{'_x_'\}' not
+R4751:4753 MK_Structure1 <> :::'\{'_x_'\}' not
+R4727:4729 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R4731:4732 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 4730:4730 <> y:62
+R4733:4736 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R4738:4739 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 4737:4737 <> x:63
+R4745:4749 MK_Structure1 <> :::x_'∈'_x not
+R4740:4740 MK_Structure1 <> :::'['_x_','_x_']' not
+R4742:4742 MK_Structure1 <> :::'['_x_','_x_']' not
+R4744:4744 MK_Structure1 <> :::'['_x_','_x_']' not
+R4741:4741 MK_Structure1 <> x:63 var
+R4743:4743 MK_Structure1 <> y:62 var
+R4750:4750 MK_Structure1 <> f:61 var
+R4781:4785 MK_Structure1 <> Range def
+not 4766:4766 <> :::'ran('_x_')'
+def 4852:4856 <> Value
+binder 4858:4858 <> f:64
+binder 4860:4860 <> x:65
+R4865:4868 MK_Structure1 <> :::'∩'_x not
+R4892:4892 MK_Structure1 <> :::'∩'_x not
+R4869:4871 MK_Structure1 <> :::'\{'_x_'\}' not
+R4889:4891 MK_Structure1 <> :::'\{'_x_'\}' not
+R4872:4874 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R4876:4877 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 4875:4875 <> y:66
+R4883:4887 MK_Structure1 <> :::x_'∈'_x not
+R4878:4878 MK_Structure1 <> :::'['_x_','_x_']' not
+R4880:4880 MK_Structure1 <> :::'['_x_','_x_']' not
+R4882:4882 MK_Structure1 <> :::'['_x_','_x_']' not
+R4879:4879 MK_Structure1 <> x:65 var
+R4881:4881 MK_Structure1 <> y:66 var
+R4888:4888 MK_Structure1 <> f:64 var
+R4919:4923 MK_Structure1 <> Value def
+not 4905:4905 <> :::x_'['_x_']'
+def 4998:5006 <> Cartesian
+binder 5008:5008 <> x:67
+binder 5010:5010 <> y:68
+R5015:5018 MK_Structure1 <> :::'\{\'_x_'\}\' not
+R5045:5048 MK_Structure1 <> :::'\{\'_x_'\}\' not
+R5019:5021 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R5025:5026 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 5022:5022 <> u:69
+binder 5024:5024 <> v:70
+R5034:5037 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5028:5032 MK_Structure1 <> :::x_'∈'_x not
+R5027:5027 MK_Structure1 <> u:69 var
+R5033:5033 MK_Structure1 <> x:67 var
+R5039:5043 MK_Structure1 <> :::x_'∈'_x not
+R5038:5038 MK_Structure1 <> v:70 var
+R5044:5044 MK_Structure1 <> y:68 var
+R5074:5082 MK_Structure1 <> Cartesian def
+not 5061:5061 <> :::x_'×'_x
+def 5226:5233 <> Exponent
+binder 5235:5235 <> y:71
+binder 5237:5237 <> x:72
+R5244:5246 MK_Structure1 <> :::'\{'_x_'\}' not
+R5297:5299 MK_Structure1 <> :::'\{'_x_'\}' not
+R5247:5249 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R5251:5252 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 5250:5250 <> f:73
+R5263:5266 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5253:5260 MK_Structure1 <> Function def
+R5262:5262 MK_Structure1 <> f:73 var
+R5279:5282 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5275:5277 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5267:5271 MK_Structure1 <> :::'dom('_x_')' not
+R5273:5274 MK_Structure1 <> :::'dom('_x_')' not
+R5272:5272 MK_Structure1 <> f:73 var
+R5278:5278 MK_Structure1 <> x:72 var
+R5291:5295 MK_Structure1 <> :::x_'⊂'_x not
+R5283:5287 MK_Structure1 <> :::'ran('_x_')' not
+R5289:5290 MK_Structure1 <> :::'ran('_x_')' not
+R5288:5288 MK_Structure1 <> f:73 var
+R5296:5296 MK_Structure1 <> y:71 var
+def 5387:5388 <> On
+binder 5390:5390 <> f:74
+binder 5392:5392 <> x:75
+R5407:5410 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5397:5404 MK_Structure1 <> Function def
+R5406:5406 MK_Structure1 <> f:74 var
+R5417:5419 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5411:5414 MK_Structure1 <> :::'dom('_x_')' not
+R5416:5416 MK_Structure1 <> :::'dom('_x_')' not
+R5415:5415 MK_Structure1 <> f:74 var
+R5420:5420 MK_Structure1 <> x:75 var
+def 5507:5508 <> To
+binder 5510:5510 <> f:76
+binder 5512:5512 <> y:77
+R5527:5530 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5517:5524 MK_Structure1 <> Function def
+R5526:5526 MK_Structure1 <> f:76 var
+R5537:5541 MK_Structure1 <> :::x_'⊂'_x not
+R5531:5534 MK_Structure1 <> :::'ran('_x_')' not
+R5536:5536 MK_Structure1 <> :::'ran('_x_')' not
+R5535:5535 MK_Structure1 <> f:76 var
+R5542:5542 MK_Structure1 <> y:77 var
+def 5630:5633 <> Onto
+binder 5635:5635 <> f:78
+binder 5637:5637 <> y:79
+R5652:5655 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R5642:5649 MK_Structure1 <> Function def
+R5651:5651 MK_Structure1 <> f:78 var
+R5662:5664 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5656:5659 MK_Structure1 <> :::'ran('_x_')' not
+R5661:5661 MK_Structure1 <> :::'ran('_x_')' not
+R5660:5660 MK_Structure1 <> f:78 var
+R5665:5665 MK_Structure1 <> y:79 var
+def 5695:5703 <> Rrelation
+binder 5705:5705 <> x:80
+binder 5707:5707 <> r:81
+binder 5709:5709 <> y:82
+R5719:5723 MK_Structure1 <> :::x_'∈'_x not
+R5714:5714 MK_Structure1 <> :::'['_x_','_x_']' not
+R5716:5716 MK_Structure1 <> :::'['_x_','_x_']' not
+R5718:5718 MK_Structure1 <> :::'['_x_','_x_']' not
+R5715:5715 MK_Structure1 <> x:80 var
+R5717:5717 MK_Structure1 <> y:82 var
+R5724:5724 MK_Structure1 <> r:81 var
+def 5754:5760 <> Connect
+binder 5762:5762 <> r:83
+binder 5764:5764 <> x:84
+R5769:5772 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5776:5777 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 5773:5773 <> u:85
+binder 5775:5775 <> v:86
+R5785:5788 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5779:5783 MK_Structure1 <> :::x_'∈'_x not
+R5778:5778 MK_Structure1 <> u:85 var
+R5784:5784 MK_Structure1 <> x:84 var
+R5796:5801 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5790:5794 MK_Structure1 <> :::x_'∈'_x not
+R5789:5789 MK_Structure1 <> v:86 var
+R5795:5795 MK_Structure1 <> x:84 var
+R5802:5802 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R5818:5822 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R5803:5811 MK_Structure1 <> Rrelation def
+R5813:5813 MK_Structure1 <> u:85 var
+R5815:5815 MK_Structure1 <> r:83 var
+R5817:5817 MK_Structure1 <> v:86 var
+R5823:5823 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R5839:5844 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R5850:5850 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R5824:5832 MK_Structure1 <> Rrelation def
+R5834:5834 MK_Structure1 <> v:86 var
+R5836:5836 MK_Structure1 <> r:83 var
+R5838:5838 MK_Structure1 <> u:85 var
+R5846:5848 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R5845:5845 MK_Structure1 <> u:85 var
+R5849:5849 MK_Structure1 <> v:86 var
+def 5880:5889 <> Transitive
+binder 5891:5891 <> r:87
+binder 5893:5893 <> x:88
+R5898:5901 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R5907:5908 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 5902:5902 <> u:89
+binder 5904:5904 <> v:90
+binder 5906:5906 <> w:91
+R5916:5919 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5910:5914 MK_Structure1 <> :::x_'∈'_x not
+R5909:5909 MK_Structure1 <> u:89 var
+R5915:5915 MK_Structure1 <> x:88 var
+R5927:5930 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5921:5925 MK_Structure1 <> :::x_'∈'_x not
+R5920:5920 MK_Structure1 <> v:90 var
+R5926:5926 MK_Structure1 <> x:88 var
+R5938:5943 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5932:5936 MK_Structure1 <> :::x_'∈'_x not
+R5931:5931 MK_Structure1 <> w:91 var
+R5937:5937 MK_Structure1 <> x:88 var
+R5959:5962 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5944:5952 MK_Structure1 <> Rrelation def
+R5954:5954 MK_Structure1 <> u:89 var
+R5956:5956 MK_Structure1 <> r:87 var
+R5958:5958 MK_Structure1 <> v:90 var
+R5978:5981 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R5963:5971 MK_Structure1 <> Rrelation def
+R5973:5973 MK_Structure1 <> v:90 var
+R5975:5975 MK_Structure1 <> r:87 var
+R5977:5977 MK_Structure1 <> w:91 var
+R5982:5990 MK_Structure1 <> Rrelation def
+R5992:5992 MK_Structure1 <> u:89 var
+R5994:5994 MK_Structure1 <> r:87 var
+R5996:5996 MK_Structure1 <> w:91 var
+def 6026:6035 <> Asymmetric
+binder 6037:6037 <> r:92
+binder 6039:6039 <> x:93
+R6044:6047 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6051:6052 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 6048:6048 <> u:94
+binder 6050:6050 <> v:95
+R6060:6063 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6054:6058 MK_Structure1 <> :::x_'∈'_x not
+R6053:6053 MK_Structure1 <> u:94 var
+R6059:6059 MK_Structure1 <> x:93 var
+R6071:6076 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6065:6069 MK_Structure1 <> :::x_'∈'_x not
+R6064:6064 MK_Structure1 <> v:95 var
+R6070:6070 MK_Structure1 <> x:93 var
+R6092:6095 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6077:6085 MK_Structure1 <> Rrelation def
+R6087:6087 MK_Structure1 <> u:94 var
+R6089:6089 MK_Structure1 <> r:92 var
+R6091:6091 MK_Structure1 <> v:95 var
+R6096:6097 Coq.Init.Logic <> ::type_scope:'~'_x not
+R6098:6106 MK_Structure1 <> Rrelation def
+R6108:6108 MK_Structure1 <> v:95 var
+R6110:6110 MK_Structure1 <> r:92 var
+R6112:6112 MK_Structure1 <> u:94 var
+def 6142:6152 <> FirstMember
+binder 6154:6154 <> z:96
+binder 6156:6156 <> r:97
+binder 6158:6158 <> x:98
+R6172:6176 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6212:6212 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6166:6170 MK_Structure1 <> :::x_'∈'_x not
+R6165:6165 MK_Structure1 <> z:96 var
+R6171:6171 MK_Structure1 <> x:98 var
+R6177:6180 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6182:6183 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 6181:6181 <> y:99
+R6191:6194 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6185:6189 MK_Structure1 <> :::x_'∈'_x not
+R6184:6184 MK_Structure1 <> y:99 var
+R6190:6190 MK_Structure1 <> x:98 var
+R6195:6196 Coq.Init.Logic <> ::type_scope:'~'_x not
+R6197:6205 MK_Structure1 <> Rrelation def
+R6207:6207 MK_Structure1 <> y:99 var
+R6209:6209 MK_Structure1 <> r:97 var
+R6211:6211 MK_Structure1 <> z:96 var
+def 6242:6252 <> WellOrdered
+binder 6254:6254 <> r:100
+binder 6256:6256 <> x:101
+R6274:6278 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6333:6333 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6263:6269 MK_Structure1 <> Connect def
+R6271:6271 MK_Structure1 <> r:100 var
+R6273:6273 MK_Structure1 <> x:101 var
+R6279:6282 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6284:6285 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 6283:6283 <> y:102
+R6293:6296 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6287:6291 MK_Structure1 <> :::x_'⊂'_x not
+R6286:6286 MK_Structure1 <> y:102 var
+R6292:6292 MK_Structure1 <> x:101 var
+R6305:6308 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6298:6302 MK_Structure1 <> :::x_'≠'_x not
+R6297:6297 MK_Structure1 <> y:102 var
+R6303:6304 MK_Structure1 <> Φ def
+R6309:6312 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R6314:6315 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 6313:6313 <> z:103
+R6316:6326 MK_Structure1 <> FirstMember def
+R6328:6328 MK_Structure1 <> z:103 var
+R6330:6330 MK_Structure1 <> r:100 var
+R6332:6332 MK_Structure1 <> y:102 var
+def 6363:6370 <> rSection
+binder 6372:6372 <> y:104
+binder 6374:6374 <> r:105
+binder 6376:6376 <> x:106
+R6388:6391 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6382:6386 MK_Structure1 <> :::x_'⊂'_x not
+R6381:6381 MK_Structure1 <> y:104 var
+R6387:6387 MK_Structure1 <> x:106 var
+R6407:6413 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6471:6471 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6392:6402 MK_Structure1 <> WellOrdered def
+R6404:6404 MK_Structure1 <> r:105 var
+R6406:6406 MK_Structure1 <> x:106 var
+R6414:6417 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6421:6422 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 6418:6418 <> u:107
+binder 6420:6420 <> v:108
+R6430:6433 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6424:6428 MK_Structure1 <> :::x_'∈'_x not
+R6423:6423 MK_Structure1 <> u:107 var
+R6429:6429 MK_Structure1 <> x:106 var
+R6441:6444 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6435:6439 MK_Structure1 <> :::x_'∈'_x not
+R6434:6434 MK_Structure1 <> v:108 var
+R6440:6440 MK_Structure1 <> y:104 var
+R6460:6463 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6445:6453 MK_Structure1 <> Rrelation def
+R6455:6455 MK_Structure1 <> u:107 var
+R6457:6457 MK_Structure1 <> r:105 var
+R6459:6459 MK_Structure1 <> v:108 var
+R6465:6469 MK_Structure1 <> :::x_'∈'_x not
+R6464:6464 MK_Structure1 <> u:107 var
+R6470:6470 MK_Structure1 <> y:104 var
+def 6501:6508 <> Order_Pr
+binder 6510:6510 <> f:109
+binder 6512:6512 <> r:110
+binder 6514:6514 <> s:111
+R6529:6534 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6519:6526 MK_Structure1 <> Function def
+R6528:6528 MK_Structure1 <> f:109 var
+R6555:6558 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6535:6545 MK_Structure1 <> WellOrdered def
+R6547:6547 MK_Structure1 <> r:110 var
+R6549:6552 MK_Structure1 <> :::'dom('_x_')' not
+R6554:6554 MK_Structure1 <> :::'dom('_x_')' not
+R6553:6553 MK_Structure1 <> f:109 var
+R6579:6585 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6671:6671 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6559:6569 MK_Structure1 <> WellOrdered def
+R6571:6571 MK_Structure1 <> s:111 var
+R6573:6576 MK_Structure1 <> :::'ran('_x_')' not
+R6578:6578 MK_Structure1 <> :::'ran('_x_')' not
+R6577:6577 MK_Structure1 <> f:109 var
+R6586:6589 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R6593:6594 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 6590:6590 <> u:112
+binder 6592:6592 <> v:113
+R6607:6610 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6596:6600 MK_Structure1 <> :::x_'∈'_x not
+R6595:6595 MK_Structure1 <> u:112 var
+R6601:6604 MK_Structure1 <> :::'dom('_x_')' not
+R6606:6606 MK_Structure1 <> :::'dom('_x_')' not
+R6605:6605 MK_Structure1 <> f:109 var
+R6623:6626 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6612:6616 MK_Structure1 <> :::x_'∈'_x not
+R6611:6611 MK_Structure1 <> v:113 var
+R6617:6620 MK_Structure1 <> :::'dom('_x_')' not
+R6622:6622 MK_Structure1 <> :::'dom('_x_')' not
+R6621:6621 MK_Structure1 <> f:109 var
+R6642:6649 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R6627:6635 MK_Structure1 <> Rrelation def
+R6637:6637 MK_Structure1 <> u:112 var
+R6639:6639 MK_Structure1 <> r:110 var
+R6641:6641 MK_Structure1 <> v:113 var
+R6650:6658 MK_Structure1 <> Rrelation def
+R6661:6661 MK_Structure1 <> :::x_'['_x_']' not
+R6663:6663 MK_Structure1 <> :::x_'['_x_']' not
+R6660:6660 MK_Structure1 <> f:109 var
+R6662:6662 MK_Structure1 <> u:112 var
+R6665:6665 MK_Structure1 <> s:111 var
+R6668:6668 MK_Structure1 <> :::x_'['_x_']' not
+R6670:6670 MK_Structure1 <> :::x_'['_x_']' not
+R6667:6667 MK_Structure1 <> f:109 var
+R6669:6669 MK_Structure1 <> v:113 var
+def 6701:6711 <> Function1_1
+binder 6713:6713 <> f:114
+R6728:6731 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6718:6725 MK_Structure1 <> Function def
+R6727:6727 MK_Structure1 <> f:114 var
+R6732:6739 MK_Structure1 <> Function def
+R6743:6747 MK_Structure1 <> :::x_'⁻¹' not
+R6742:6742 MK_Structure1 <> f:114 var
+def 6778:6786 <> Order_PXY
+binder 6788:6788 <> f:115
+binder 6790:6790 <> x:116
+binder 6792:6792 <> y:117
+binder 6794:6794 <> r:118
+binder 6796:6796 <> s:119
+R6816:6819 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6801:6811 MK_Structure1 <> WellOrdered def
+R6813:6813 MK_Structure1 <> r:118 var
+R6815:6815 MK_Structure1 <> x:116 var
+R6835:6840 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6820:6830 MK_Structure1 <> WellOrdered def
+R6832:6832 MK_Structure1 <> s:119 var
+R6834:6834 MK_Structure1 <> y:117 var
+R6855:6858 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6841:6848 MK_Structure1 <> Order_Pr def
+R6850:6850 MK_Structure1 <> f:115 var
+R6852:6852 MK_Structure1 <> r:118 var
+R6854:6854 MK_Structure1 <> s:119 var
+R6878:6881 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R6859:6866 MK_Structure1 <> rSection def
+R6868:6871 MK_Structure1 <> :::'dom('_x_')' not
+R6873:6873 MK_Structure1 <> :::'dom('_x_')' not
+R6872:6872 MK_Structure1 <> f:115 var
+R6875:6875 MK_Structure1 <> r:118 var
+R6877:6877 MK_Structure1 <> x:116 var
+R6882:6889 MK_Structure1 <> rSection def
+R6891:6894 MK_Structure1 <> :::'ran('_x_')' not
+R6896:6896 MK_Structure1 <> :::'ran('_x_')' not
+R6895:6895 MK_Structure1 <> f:115 var
+R6898:6898 MK_Structure1 <> s:119 var
+R6900:6900 MK_Structure1 <> y:117 var
+def 6931:6931 <> E
+R6936:6939 MK_Structure1 <> :::'\{\'_x_'\}\' not
+R6955:6958 MK_Structure1 <> :::'\{\'_x_'\}\' not
+R6940:6942 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R6946:6947 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 6943:6943 <> x:120
+binder 6945:6945 <> y:121
+R6949:6953 MK_Structure1 <> :::x_'∈'_x not
+R6948:6948 MK_Structure1 <> x:120 var
+R6954:6954 MK_Structure1 <> y:121 var
+def 6989:6992 <> Full
+binder 6994:6994 <> x:122
+R6999:7002 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7004:7005 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 7003:7003 <> m:123
+R7013:7016 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7007:7011 MK_Structure1 <> :::x_'∈'_x not
+R7006:7006 MK_Structure1 <> m:123 var
+R7012:7012 MK_Structure1 <> x:122 var
+R7018:7022 MK_Structure1 <> :::x_'⊂'_x not
+R7017:7017 MK_Structure1 <> m:123 var
+R7023:7023 MK_Structure1 <> x:122 var
+def 7054:7060 <> Ordinal
+binder 7062:7062 <> x:124
+R7078:7081 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R7067:7073 MK_Structure1 <> Connect def
+R7075:7075 MK_Structure1 <> E def
+R7077:7077 MK_Structure1 <> x:124 var
+R7082:7085 MK_Structure1 <> Full def
+R7087:7087 MK_Structure1 <> x:124 var
+def 7118:7118 <> R
+R7123:7125 MK_Structure1 <> :::'\{'_x_'\}' not
+R7141:7143 MK_Structure1 <> :::'\{'_x_'\}' not
+R7126:7128 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R7130:7131 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 7129:7129 <> x:125
+R7132:7138 MK_Structure1 <> Ordinal def
+R7140:7140 MK_Structure1 <> x:125 var
+def 7174:7187 <> Ordinal_Number
+binder 7189:7189 <> x:126
+R7195:7199 MK_Structure1 <> :::x_'∈'_x not
+R7194:7194 MK_Structure1 <> x:126 var
+R7200:7200 MK_Structure1 <> R def
+def 7231:7234 <> Less
+binder 7236:7236 <> x:127
+binder 7238:7238 <> y:128
+R7244:7248 MK_Structure1 <> :::x_'∈'_x not
+R7243:7243 MK_Structure1 <> x:127 var
+R7249:7249 MK_Structure1 <> y:128 var
+R7276:7279 MK_Structure1 <> Less def
+not 7262:7262 <> :::x_'≺'_x
+def 7349:7357 <> LessEqual
+R7365:7369 MK_Structure1 <> Class defax
+binder 7360:7360 <> x:129
+binder 7362:7362 <> y:130
+R7382:7385 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R7376:7380 MK_Structure1 <> :::x_'∈'_x not
+R7375:7375 MK_Structure1 <> x:129 var
+R7381:7381 MK_Structure1 <> y:130 var
+R7387:7389 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R7386:7386 MK_Structure1 <> x:129 var
+R7390:7390 MK_Structure1 <> y:130 var
+R7417:7425 MK_Structure1 <> LessEqual def
+not 7403:7403 <> :::x_'≼'_x
+def 7495:7501 <> PlusOne
+binder 7503:7503 <> x:131
+R7509:7513 MK_Structure1 <> :::x_'∪'_x not
+R7508:7508 MK_Structure1 <> x:131 var
+R7514:7514 MK_Structure1 <> :::'['_x_']' not
+R7516:7516 MK_Structure1 <> :::'['_x_']' not
+R7515:7515 MK_Structure1 <> x:131 var
+def 7547:7557 <> Restriction
+binder 7559:7559 <> f:132
+binder 7561:7561 <> x:133
+R7567:7572 MK_Structure1 <> :::x_'∩'_x not
+R7580:7580 MK_Structure1 <> :::x_'∩'_x not
+R7566:7566 MK_Structure1 <> f:132 var
+R7574:7577 MK_Structure1 <> :::x_'×'_x not
+R7573:7573 MK_Structure1 <> x:133 var
+R7578:7579 MK_Structure1 <> μ def
+R7609:7619 MK_Structure1 <> Restriction def
+not 7593:7593 <> :::x_'|'_'('_x_')'
+def 7669:7675 <> Integer
+binder 7677:7677 <> x:134
+R7691:7694 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R7682:7688 MK_Structure1 <> Ordinal def
+R7690:7690 MK_Structure1 <> x:134 var
+R7695:7705 MK_Structure1 <> WellOrdered def
+R7709:7713 MK_Structure1 <> :::x_'⁻¹' not
+R7708:7708 MK_Structure1 <> E def
+R7716:7716 MK_Structure1 <> x:134 var
+def 7747:7756 <> LastMember
+binder 7758:7758 <> x:135
+binder 7760:7760 <> E:136
+binder 7762:7762 <> y:137
+R7767:7777 MK_Structure1 <> FirstMember def
+R7779:7779 MK_Structure1 <> x:135 var
+R7783:7787 MK_Structure1 <> :::x_'⁻¹' not
+R7782:7782 MK_Structure1 <> E:136 var
+R7790:7790 MK_Structure1 <> y:137 var
+def 7821:7822 <> ω
+R7827:7829 MK_Structure1 <> :::'\{'_x_'\}' not
+R7845:7847 MK_Structure1 <> :::'\{'_x_'\}' not
+R7830:7832 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R7834:7835 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 7833:7833 <> x:138
+R7836:7842 MK_Structure1 <> Integer def
+R7844:7844 MK_Structure1 <> x:138 var
+def 7881:7894 <> ChoiceFunction
+binder 7896:7896 <> c:139
+R7913:7917 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R7951:7951 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R7903:7910 MK_Structure1 <> Function def
+R7912:7912 MK_Structure1 <> c:139 var
+R7918:7921 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7923:7924 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 7922:7922 <> x:140
+R7937:7940 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R7926:7930 MK_Structure1 <> :::x_'∈'_x not
+R7925:7925 MK_Structure1 <> x:140 var
+R7931:7934 MK_Structure1 <> :::'dom('_x_')' not
+R7936:7936 MK_Structure1 <> :::'dom('_x_')' not
+R7935:7935 MK_Structure1 <> c:139 var
+R7945:7949 MK_Structure1 <> :::x_'∈'_x not
+R7942:7942 MK_Structure1 <> :::x_'['_x_']' not
+R7944:7944 MK_Structure1 <> :::x_'['_x_']' not
+R7941:7941 MK_Structure1 <> c:139 var
+R7943:7943 MK_Structure1 <> x:140 var
+R7950:7950 MK_Structure1 <> x:140 var
+def 7982:7985 <> Nest
+binder 7987:7987 <> n:141
+R7992:7995 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R7999:8000 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 7996:7996 <> x:142
+binder 7998:7998 <> y:143
+R8008:8011 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8002:8006 MK_Structure1 <> :::x_'∈'_x not
+R8001:8001 MK_Structure1 <> x:142 var
+R8007:8007 MK_Structure1 <> n:141 var
+R8019:8022 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8013:8017 MK_Structure1 <> :::x_'∈'_x not
+R8012:8012 MK_Structure1 <> y:143 var
+R8018:8018 MK_Structure1 <> n:141 var
+R8030:8033 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R8024:8028 MK_Structure1 <> :::x_'⊂'_x not
+R8023:8023 MK_Structure1 <> x:142 var
+R8029:8029 MK_Structure1 <> y:143 var
+R8035:8039 MK_Structure1 <> :::x_'⊂'_x not
+R8034:8034 MK_Structure1 <> y:143 var
+R8040:8040 MK_Structure1 <> x:142 var
+def 8144:8153 <> Equivalent
+binder 8155:8155 <> x:144
+binder 8157:8157 <> y:145
+R8164:8167 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R8169:8170 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 8168:8168 <> f:146
+R8184:8187 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8171:8181 MK_Structure1 <> Function1_1 def
+R8183:8183 MK_Structure1 <> f:146 var
+R8198:8201 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8194:8196 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8188:8191 MK_Structure1 <> :::'dom('_x_')' not
+R8193:8193 MK_Structure1 <> :::'dom('_x_')' not
+R8192:8192 MK_Structure1 <> f:146 var
+R8197:8197 MK_Structure1 <> x:144 var
+R8208:8210 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8202:8205 MK_Structure1 <> :::'ran('_x_')' not
+R8207:8207 MK_Structure1 <> :::'ran('_x_')' not
+R8206:8206 MK_Structure1 <> f:146 var
+R8211:8211 MK_Structure1 <> y:145 var
+R8238:8247 MK_Structure1 <> Equivalent def
+not 8224:8224 <> :::x_'≈'_x
+def 8384:8398 <> Cardinal_Number
+binder 8400:8400 <> x:147
+R8424:8428 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8469:8469 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8408:8421 MK_Structure1 <> Ordinal_Number def
+R8423:8423 MK_Structure1 <> x:147 var
+R8429:8432 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R8434:8435 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 8433:8433 <> y:148
+R8443:8446 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8437:8441 MK_Structure1 <> :::x_'∈'_x not
+R8436:8436 MK_Structure1 <> y:148 var
+R8442:8442 MK_Structure1 <> R def
+R8454:8457 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R8448:8452 MK_Structure1 <> :::x_'≺'_x not
+R8447:8447 MK_Structure1 <> y:148 var
+R8453:8453 MK_Structure1 <> x:147 var
+R8458:8460 Coq.Init.Logic <> ::type_scope:'~'_x not
+R8468:8468 Coq.Init.Logic <> ::type_scope:'~'_x not
+R8462:8466 MK_Structure1 <> :::x_'≈'_x not
+R8461:8461 MK_Structure1 <> x:147 var
+R8467:8467 MK_Structure1 <> y:148 var
+def 8524:8524 <> C
+R8529:8531 MK_Structure1 <> :::'\{'_x_'\}' not
+R8555:8557 MK_Structure1 <> :::'\{'_x_'\}' not
+R8532:8534 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R8536:8537 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 8535:8535 <> x:149
+R8538:8552 MK_Structure1 <> Cardinal_Number def
+R8554:8554 MK_Structure1 <> x:149 var
+def 8624:8624 <> P
+R8629:8632 MK_Structure1 <> :::'\{\'_x_'\}\' not
+R8659:8662 MK_Structure1 <> :::'\{\'_x_'\}\' not
+R8633:8635 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R8639:8640 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 8636:8636 <> x:150
+binder 8638:8638 <> y:151
+R8648:8651 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8642:8646 MK_Structure1 <> :::x_'≈'_x not
+R8641:8641 MK_Structure1 <> x:150 var
+R8647:8647 MK_Structure1 <> y:151 var
+R8653:8657 MK_Structure1 <> :::x_'∈'_x not
+R8652:8652 MK_Structure1 <> y:151 var
+R8658:8658 MK_Structure1 <> C def
+def 8727:8732 <> Finite
+binder 8734:8734 <> x:152
+R8743:8747 MK_Structure1 <> :::x_'∈'_x not
+R8740:8740 MK_Structure1 <> :::x_'['_x_']' not
+R8742:8742 MK_Structure1 <> :::x_'['_x_']' not
+R8739:8739 MK_Structure1 <> P def
+R8741:8741 MK_Structure1 <> x:152 var
+R8748:8749 MK_Structure1 <> ω def
+def 8764:8766 <> Max
+binder 8768:8768 <> x:153
+binder 8770:8770 <> y:154
+R8776:8780 MK_Structure1 <> :::x_'∪'_x not
+R8775:8775 MK_Structure1 <> x:153 var
+R8781:8781 MK_Structure1 <> y:154 var
+def 8796:8803 <> LessLess
+R8808:8811 MK_Structure1 <> :::'\{\'_x_'\}\' not
+R9011:9014 MK_Structure1 <> :::'\{\'_x_'\}\' not
+R8812:8814 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+R8818:8819 Pre_MK_Logic <> :::'λ'_x_'..'_x_','_x not
+binder 8815:8815 <> a:155
+binder 8817:8817 <> b:156
+R8820:8823 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R8831:8832 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 8824:8824 <> u:157
+binder 8826:8826 <> v:158
+binder 8828:8828 <> x:159
+binder 8830:8830 <> y:160
+R8842:8847 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8834:8836 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8833:8833 MK_Structure1 <> a:155 var
+R8837:8837 MK_Structure1 <> :::'['_x_','_x_']' not
+R8839:8839 MK_Structure1 <> :::'['_x_','_x_']' not
+R8841:8841 MK_Structure1 <> :::'['_x_','_x_']' not
+R8838:8838 MK_Structure1 <> u:157 var
+R8840:8840 MK_Structure1 <> v:158 var
+R8857:8860 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8849:8851 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8848:8848 MK_Structure1 <> b:156 var
+R8852:8852 MK_Structure1 <> :::'['_x_','_x_']' not
+R8854:8854 MK_Structure1 <> :::'['_x_','_x_']' not
+R8856:8856 MK_Structure1 <> :::'['_x_','_x_']' not
+R8853:8853 MK_Structure1 <> x:159 var
+R8855:8855 MK_Structure1 <> y:160 var
+R8879:8882 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8866:8871 MK_Structure1 <> :::x_'∈'_x not
+R8878:8878 MK_Structure1 <> :::x_'∈'_x not
+R8861:8861 MK_Structure1 <> :::'['_x_','_x_']' not
+R8863:8863 MK_Structure1 <> :::'['_x_','_x_']' not
+R8865:8865 MK_Structure1 <> :::'['_x_','_x_']' not
+R8862:8862 MK_Structure1 <> u:157 var
+R8864:8864 MK_Structure1 <> v:158 var
+R8873:8876 MK_Structure1 <> :::x_'×'_x not
+R8872:8872 MK_Structure1 <> R def
+R8877:8877 MK_Structure1 <> R def
+R8901:8907 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9010:9010 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8888:8893 MK_Structure1 <> :::x_'∈'_x not
+R8900:8900 MK_Structure1 <> :::x_'∈'_x not
+R8883:8883 MK_Structure1 <> :::'['_x_','_x_']' not
+R8885:8885 MK_Structure1 <> :::'['_x_','_x_']' not
+R8887:8887 MK_Structure1 <> :::'['_x_','_x_']' not
+R8884:8884 MK_Structure1 <> x:159 var
+R8886:8886 MK_Structure1 <> y:160 var
+R8895:8898 MK_Structure1 <> :::x_'×'_x not
+R8894:8894 MK_Structure1 <> R def
+R8899:8899 MK_Structure1 <> R def
+R8908:8908 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R8928:8932 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R8916:8920 MK_Structure1 <> :::x_'≺'_x not
+R8909:8911 MK_Structure1 <> Max def
+R8913:8913 MK_Structure1 <> u:157 var
+R8915:8915 MK_Structure1 <> v:158 var
+R8921:8923 MK_Structure1 <> Max def
+R8925:8925 MK_Structure1 <> x:159 var
+R8927:8927 MK_Structure1 <> y:160 var
+R8933:8933 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R8962:8971 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R9009:9009 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R8951:8954 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8941:8943 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8934:8936 MK_Structure1 <> Max def
+R8938:8938 MK_Structure1 <> u:157 var
+R8940:8940 MK_Structure1 <> v:158 var
+R8944:8946 MK_Structure1 <> Max def
+R8948:8948 MK_Structure1 <> x:159 var
+R8950:8950 MK_Structure1 <> y:160 var
+R8956:8960 MK_Structure1 <> :::x_'≺'_x not
+R8955:8955 MK_Structure1 <> u:157 var
+R8961:8961 MK_Structure1 <> x:159 var
+R8989:8992 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8979:8981 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8972:8974 MK_Structure1 <> Max def
+R8976:8976 MK_Structure1 <> u:157 var
+R8978:8978 MK_Structure1 <> v:158 var
+R8982:8984 MK_Structure1 <> Max def
+R8986:8986 MK_Structure1 <> x:159 var
+R8988:8988 MK_Structure1 <> y:160 var
+R8998:9001 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R8994:8996 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R8993:8993 MK_Structure1 <> u:157 var
+R8997:8997 MK_Structure1 <> x:159 var
+R9003:9007 MK_Structure1 <> :::x_'≺'_x not
+R9002:9002 MK_Structure1 <> v:158 var
+R9008:9008 MK_Structure1 <> y:160 var
+R9037:9044 MK_Structure1 <> LessLess def
+not 9027:9027 <> :::'≪'
+rec 9085:9093 <> MK_Axioms
+proj 9107:9109 <> A_I
+proj 9164:9167 <> A_II
+proj 9221:9225 <> A_III
+proj 9304:9307 <> A_IV
+proj 9372:9374 <> A_V
+proj 9439:9442 <> A_VI
+proj 9486:9490 <> A_VII
+proj 9547:9552 <> A_VIII
+R9113:9116 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9120:9121 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 9117:9117 <> x:162
+binder 9119:9119 <> y:163
+R9127:9132 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R9159:9159 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R9123:9125 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9122:9122 MK_Structure1 <> x:162 var
+R9126:9126 MK_Structure1 <> y:163 var
+R9133:9136 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9138:9139 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 9137:9137 <> z:164
+R9147:9151 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R9141:9145 MK_Structure1 <> :::x_'∈'_x not
+R9140:9140 MK_Structure1 <> z:164 var
+R9146:9146 MK_Structure1 <> x:162 var
+R9153:9157 MK_Structure1 <> :::x_'∈'_x not
+R9152:9152 MK_Structure1 <> z:164 var
+R9158:9158 MK_Structure1 <> y:163 var
+R9171:9174 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9178:9179 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 9175:9175 <> b:166
+binder 9177:9177 <> P:167
+R9193:9197 Coq.Init.Logic <> ::type_scope:x_'<->'_x not
+R9181:9185 MK_Structure1 <> :::x_'∈'_x not
+R9180:9180 MK_Structure1 <> b:166 var
+R9186:9188 MK_Structure1 <> :::'\{'_x_'\}' not
+R9190:9192 MK_Structure1 <> :::'\{'_x_'\}' not
+R9189:9189 MK_Structure1 <> P:167 var
+R9208:9212 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9216:9216 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9198:9205 MK_Structure1 <> Ensemble def
+R9207:9207 MK_Structure1 <> b:166 var
+R9213:9213 MK_Structure1 <> P:167 var
+R9215:9215 MK_Structure1 <> b:166 var
+R9229:9232 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9236:9237 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 9234:9234 <> x:169
+R9248:9251 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9238:9245 MK_Structure1 <> Ensemble def
+R9247:9247 MK_Structure1 <> x:169 var
+R9252:9255 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R9257:9258 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 9256:9256 <> y:170
+R9269:9273 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9299:9299 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9259:9266 MK_Structure1 <> Ensemble def
+R9268:9268 MK_Structure1 <> y:170 var
+R9274:9277 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9279:9280 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 9278:9278 <> z:171
+R9288:9291 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9282:9286 MK_Structure1 <> :::x_'⊂'_x not
+R9281:9281 MK_Structure1 <> z:171 var
+R9287:9287 MK_Structure1 <> x:169 var
+R9293:9297 MK_Structure1 <> :::x_'∈'_x not
+R9292:9292 MK_Structure1 <> z:171 var
+R9298:9298 MK_Structure1 <> y:170 var
+R9311:9314 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9320:9321 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 9316:9316 <> x:173
+binder 9318:9318 <> y:174
+R9332:9335 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9322:9329 MK_Structure1 <> Ensemble def
+R9331:9331 MK_Structure1 <> x:173 var
+R9346:9349 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9336:9343 MK_Structure1 <> Ensemble def
+R9345:9345 MK_Structure1 <> y:174 var
+R9350:9357 MK_Structure1 <> Ensemble def
+R9361:9365 MK_Structure1 <> :::x_'∪'_x not
+R9360:9360 MK_Structure1 <> x:173 var
+R9366:9366 MK_Structure1 <> y:174 var
+R9378:9381 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9385:9386 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 9383:9383 <> f:176
+R9397:9400 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9387:9394 MK_Structure1 <> Function def
+R9396:9396 MK_Structure1 <> f:176 var
+R9416:9419 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9401:9408 MK_Structure1 <> Ensemble def
+R9410:9413 MK_Structure1 <> :::'dom('_x_')' not
+R9415:9415 MK_Structure1 <> :::'dom('_x_')' not
+R9414:9414 MK_Structure1 <> f:176 var
+R9420:9427 MK_Structure1 <> Ensemble def
+R9429:9432 MK_Structure1 <> :::'ran('_x_')' not
+R9434:9434 MK_Structure1 <> :::'ran('_x_')' not
+R9433:9433 MK_Structure1 <> f:176 var
+R9446:9449 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9451:9452 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 9450:9450 <> x:178
+R9463:9466 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9453:9460 MK_Structure1 <> Ensemble def
+R9462:9462 MK_Structure1 <> x:178 var
+R9467:9474 MK_Structure1 <> Ensemble def
+R9477:9479 MK_Structure1 <> :::'∪'_x not
+R9480:9480 MK_Structure1 <> x:178 var
+R9494:9497 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9499:9500 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 9498:9498 <> x:180
+R9509:9512 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9502:9506 MK_Structure1 <> :::x_'≠'_x not
+R9501:9501 MK_Structure1 <> x:180 var
+R9507:9508 MK_Structure1 <> Φ def
+R9513:9516 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R9518:9519 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 9517:9517 <> y:181
+R9527:9530 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9521:9525 MK_Structure1 <> :::x_'∈'_x not
+R9520:9520 MK_Structure1 <> y:181 var
+R9526:9526 MK_Structure1 <> x:180 var
+R9538:9540 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R9532:9536 MK_Structure1 <> :::x_'∩'_x not
+R9531:9531 MK_Structure1 <> x:180 var
+R9537:9537 MK_Structure1 <> y:181 var
+R9541:9542 MK_Structure1 <> Φ def
+R9556:9559 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R9561:9562 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 9560:9560 <> y:183
+R9573:9576 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9563:9570 MK_Structure1 <> Ensemble def
+R9572:9572 MK_Structure1 <> y:183 var
+R9585:9589 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9625:9625 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R9579:9583 MK_Structure1 <> :::x_'∈'_x not
+R9577:9578 MK_Structure1 <> Φ def
+R9584:9584 MK_Structure1 <> y:183 var
+R9590:9593 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+R9595:9596 Pre_MK_Logic <> ::type_scope:'∀'_x_'..'_x_','_x not
+binder 9594:9594 <> x:184
+R9604:9607 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R9598:9602 MK_Structure1 <> :::x_'∈'_x not
+R9597:9597 MK_Structure1 <> x:184 var
+R9603:9603 MK_Structure1 <> y:183 var
+R9608:9608 MK_Structure1 <> :::x_'∈'_x not
+R9618:9623 MK_Structure1 <> :::x_'∈'_x not
+R9610:9614 MK_Structure1 <> :::x_'∪'_x not
+R9609:9609 MK_Structure1 <> x:184 var
+R9615:9615 MK_Structure1 <> :::'['_x_']' not
+R9617:9617 MK_Structure1 <> :::'['_x_']' not
+R9616:9616 MK_Structure1 <> x:184 var
+R9624:9624 MK_Structure1 <> y:183 var
+ax 9642:9649 <> MK_Axiom
+R9653:9661 MK_Structure1 <> MK_Axioms class
+abbrev 9674:9679 <> AxiomI
+R9687:9689 MK_Structure1 <> A_I meth
+R9691:9698 MK_Structure1 <> MK_Axiom defax
+abbrev 9711:9717 <> AxiomII
+R9725:9728 MK_Structure1 <> A_II meth
+R9730:9737 MK_Structure1 <> MK_Axiom defax
+abbrev 9750:9757 <> AxiomIII
+R9765:9769 MK_Structure1 <> A_III meth
+R9771:9778 MK_Structure1 <> MK_Axiom defax
+abbrev 9791:9797 <> AxiomIV
+R9805:9808 MK_Structure1 <> A_IV meth
+R9810:9817 MK_Structure1 <> MK_Axiom defax
+abbrev 9830:9835 <> AxiomV
+R9843:9845 MK_Structure1 <> A_V meth
+R9847:9854 MK_Structure1 <> MK_Axiom defax
+abbrev 9867:9873 <> AxiomVI
+R9881:9884 MK_Structure1 <> A_VI meth
+R9886:9893 MK_Structure1 <> MK_Axiom defax
+abbrev 9906:9913 <> AxiomVII
+R9921:9925 MK_Structure1 <> A_VII meth
+R9927:9934 MK_Structure1 <> MK_Axiom defax
+abbrev 9947:9955 <> AxiomVIII
+R9963:9968 MK_Structure1 <> A_VIII meth
+R9970:9977 MK_Structure1 <> MK_Axiom defax
+ax 9992:9998 <> AxiomIX
+R10002:10005 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+R10007:10008 Pre_MK_Logic <> ::type_scope:'∃'_x_'..'_x_','_x not
+binder 10006:10006 <> c:187
+R10025:10028 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R10009:10022 MK_Structure1 <> ChoiceFunction def
+R10024:10024 MK_Structure1 <> c:187 var
+R10035:10037 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R10029:10032 MK_Structure1 <> :::'dom('_x_')' not
+R10034:10034 MK_Structure1 <> :::'dom('_x_')' not
+R10033:10033 MK_Structure1 <> c:187 var
+R10040:10042 MK_Structure1 <> :::x_'~'_x not
+R10038:10039 MK_Structure1 <> μ def
+R10043:10043 MK_Structure1 <> :::'['_x_']' not
+R10046:10046 MK_Structure1 <> :::'['_x_']' not
+R10044:10045 MK_Structure1 <> Φ def
+R10682:10687 MK_Structure1 <> AxiomI abbrev
+R10727:10733 MK_Structure1 <> AxiomII abbrev
+R10774:10780 MK_Structure1 <> AxiomII abbrev
