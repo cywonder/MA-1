@@ -1,4 +1,4 @@
-(** MA_CH1 *)
+(** MA_CH **)
 
 (* 读入库文件 *)
 Require Export Real_Axioms.
