@@ -1,12 +1,3 @@
-(**********************************************************************)
-(*  This is part of Real_A, it is distributed under the terms of the  *)
-(*          GNU Lesser General Public License version 3               *)
-(*             (see file LICENSE for more details)                    *)
-(*                                                                    *)
-(*                     Copyright 2023-2028                            *)
-(*    Dakai Guo, Si Chen, Guowei Dou, Shukun Leng and Wensheng Yu     *)
-(**********************************************************************)
-
 (** Real_Axioms *)
 
 (*基于MK集论，根据Zorich的《数学分析》定义了实数结构和实数公理系统，
