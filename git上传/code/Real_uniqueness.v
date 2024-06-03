@@ -1,12 +1,3 @@
-(**********************************************************************)
-(* This is part of Real_Uni, it is distributed under the terms of the *)
-(*          GNU Lesser General Public License version 3               *)
-(*             (see file LICENSE for more details)                    *)
-(*                                                                    *)
-(*                     Copyright 2023-2028                            *)
-(*    Dakai Guo, Si Chen, Guowei Dou, Shukun Leng and Wensheng Yu     *)
-(**********************************************************************)
-
 (** Real_uniqueness *)
 
 Require Export Real_Axioms.
