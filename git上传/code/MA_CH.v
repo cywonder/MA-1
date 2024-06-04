@@ -533,7 +533,7 @@ Definition IncreaseFun f := Function f
 Definition StrictIncreaseFun f := Function f
   /\ (∀ x1 x2, x1 ∈ dom(f) -> x2 ∈ dom(f) -> x1 < x2 -> f[x1] < f[x2]).
 Definition DecreaseFun f := Function f
-  /\ (∀ x1 x2, x1 ∈ dom(f) -> x2 ∈ dom(f) -> x1 < x2 -> f[x2] ≤ f[x2]).
+/\ (∀ x1 x2, x1 ∈ dom(f) -> x2 ∈ dom(f) -> x1 < x2 -> f[x2] ≤ f[x1]).
 Definition StrictDecreaseFun f := Function f
   /\ (∀ x1 x2, x1 ∈ dom(f) -> x2 ∈ dom(f) -> x1 < x2 -> f[x2] < f[x1]).
 
